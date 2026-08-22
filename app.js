@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initWhiteLabelSimulator();
   initFaqAccordion();
   initMobileNav();
+  initSearchModal();
   initActionToasts();
   initGsapAnimations();
 });
@@ -526,3 +527,155 @@ window.shareProduct = function(code, name, price) {
   const msg = `Catalogue created for ${name} (${code}) at ₹${price.toLocaleString('en-IN')}. Ready to share with your customers!`;
   window.showToast(msg);
 };
+
+/* ==========================================================================
+   07. QUICK SEARCH / COMMAND PALETTE MODAL
+   ========================================================================== */
+function initSearchModal() {
+  const searchBtn = document.getElementById('searchBtn');
+  const searchModal = document.getElementById('searchModal');
+  const searchCloseBtn = document.getElementById('searchCloseBtn');
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
+  if (!searchModal) return;
+
+  function openSearch() {
+    searchModal.classList.add('open');
+    searchModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      if (searchInput) {
+        searchInput.value = '';
+        searchInput.focus();
+        filterSearch('');
+      }
+    }, 50);
+  }
+
+  function closeSearch() {
+    searchModal.classList.remove('open');
+    searchModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function filterSearch(query) {
+    const q = query.toLowerCase().trim();
+    const items = searchResults ? searchResults.querySelectorAll('.search-result-item') : [];
+    const labels = searchResults ? searchResults.querySelectorAll('.search-section-label') : [];
+    let visibleCount = 0;
+
+    items.forEach(item => {
+      const title = (item.getAttribute('data-title') || '') + ' ' + (item.innerText || '');
+      const matches = !q || title.toLowerCase().includes(q);
+      item.style.display = matches ? 'flex' : 'none';
+      if (matches) visibleCount++;
+    });
+
+    labels.forEach(label => {
+      const group = label.nextElementSibling;
+      if (group && group.classList.contains('search-results-group')) {
+        const visibleInGroup = group.querySelectorAll('.search-result-item[style*="display: flex"], .search-result-item:not([style*="display: none"])');
+        label.style.display = (visibleInGroup.length > 0) ? 'block' : 'none';
+      }
+    });
+
+    let noResultsMsg = searchResults ? searchResults.querySelector('.search-no-results') : null;
+    if (visibleCount === 0) {
+      if (!noResultsMsg && searchResults) {
+        noResultsMsg = document.createElement('div');
+        noResultsMsg.className = 'search-no-results';
+        searchResults.appendChild(noResultsMsg);
+      }
+      if (noResultsMsg) {
+        noResultsMsg.innerHTML = `No results found for "<strong>${escapeHtml(q)}</strong>". Try searching for <em>Katan Silk</em>, <em>Dropshipping</em>, or <em>Suits</em>.`;
+        noResultsMsg.style.display = 'block';
+      }
+    } else if (noResultsMsg) {
+      noResultsMsg.style.display = 'none';
+    }
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>'"]/g, tag => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      "'": '&#39;',
+      '"': '&quot;'
+    }[tag] || tag));
+  }
+
+  if (searchBtn) {
+    searchBtn.addEventListener('click', openSearch);
+  }
+
+  if (searchCloseBtn) {
+    searchCloseBtn.addEventListener('click', closeSearch);
+  }
+
+  searchModal.addEventListener('click', (e) => {
+    if (e.target === searchModal) {
+      closeSearch();
+    }
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      filterSearch(e.target.value);
+    });
+
+    searchInput.addEventListener('keydown', (e) => {
+      const visibleItems = Array.from(searchResults.querySelectorAll('.search-result-item')).filter(el => el.style.display !== 'none');
+      const selectedIndex = visibleItems.findIndex(el => el.classList.contains('selected'));
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        const nextIndex = (selectedIndex + 1) % visibleItems.length;
+        visibleItems.forEach(el => el.classList.remove('selected'));
+        if (visibleItems[nextIndex]) {
+          visibleItems[nextIndex].classList.add('selected');
+          visibleItems[nextIndex].scrollIntoView({ block: 'nearest' });
+        }
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prevIndex = (selectedIndex - 1 + visibleItems.length) % visibleItems.length;
+        visibleItems.forEach(el => el.classList.remove('selected'));
+        if (visibleItems[prevIndex]) {
+          visibleItems[prevIndex].classList.add('selected');
+          visibleItems[prevIndex].scrollIntoView({ block: 'nearest' });
+        }
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        const targetItem = selectedIndex >= 0 ? visibleItems[selectedIndex] : visibleItems[0];
+        if (targetItem) {
+          targetItem.click();
+          closeSearch();
+        }
+      }
+    });
+  }
+
+  // Close on item click
+  if (searchResults) {
+    searchResults.querySelectorAll('.search-result-item').forEach(item => {
+      item.addEventListener('click', () => {
+        closeSearch();
+      });
+    });
+  }
+
+  // Keyboard shortcut: Ctrl + K or Cmd + K or ESC
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (searchModal.classList.contains('open')) {
+        closeSearch();
+      } else {
+        openSearch();
+      }
+    } else if (e.key === 'Escape' && searchModal.classList.contains('open')) {
+      closeSearch();
+    }
+  });
+}
+

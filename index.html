@@ -112,6 +112,12 @@
 
       <!-- Action Buttons -->
       <div class="nav-actions">
+        <button class="nav-search-btn" id="searchBtn" aria-label="Search Catalog & Platform" title="Search (Ctrl + K)">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
         <a href="#login" class="btn btn-ghost btn-sm">Log In</a>
         <a href="#register" class="btn btn-signal btn-sm">Start Reselling</a>
         <button class="mobile-toggle-btn" aria-label="Toggle Navigation Menu">
@@ -1121,6 +1127,134 @@
       </div>
     </div>
   </footer>
+
+  <!-- Quick Search / Command Palette Modal -->
+  <div class="search-modal-backdrop" id="searchModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
+    <div class="search-modal-container">
+      <div class="search-modal-header">
+        <svg class="search-input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" class="search-modal-input" placeholder="Search sarees, fabrics, features, wholesale..." autocomplete="off" spellcheck="false">
+        <button class="search-modal-close" id="searchCloseBtn" aria-label="Close search">
+          <kbd>ESC</kbd>
+        </button>
+      </div>
+
+      <div class="search-modal-body" id="searchResults">
+        <!-- Quick Filters / Suggestions -->
+        <div class="search-section-label">POPULAR CATEGORIES & PRODUCTS</div>
+        <div class="search-results-group">
+          <a href="#what-to-sell" class="search-result-item" data-title="Katan Silk Sarees pure zari banarasi handloom">
+            <span class="search-item-badge">Sarees</span>
+            <div class="search-item-info">
+              <span class="search-item-title">Katan Silk Sarees</span>
+              <span class="search-item-desc">Pure silk Banarasi sarees with Kadwa & Kadhwa zari weaves</span>
+            </div>
+            <span class="search-item-arrow">→</span>
+          </a>
+          <a href="#what-to-sell" class="search-result-item" data-title="Georgette & Mashru Silk light weight bridal sarees">
+            <span class="search-item-badge">Sarees</span>
+            <div class="search-item-info">
+              <span class="search-item-title">Georgette & Mashru Sarees</span>
+              <span class="search-item-desc">Flowing lightweight luxury sarees for festive & boutique collections</span>
+            </div>
+            <span class="search-item-arrow">→</span>
+          </a>
+          <a href="#what-to-sell" class="search-result-item" data-title="Organza & Tissue Sarees modern pastel metallic shine">
+            <span class="search-item-badge">Sarees</span>
+            <div class="search-item-info">
+              <span class="search-item-title">Organza & Tissue Sarees</span>
+              <span class="search-item-desc">Sheer, modern pastel weaves with delicate gold and silver brocade</span>
+            </div>
+            <span class="search-item-arrow">→</span>
+          </a>
+          <a href="#what-to-sell" class="search-result-item" data-title="Unstitched Banarasi Silk Suits dress material salwar">
+            <span class="search-item-badge">Suits</span>
+            <div class="search-item-info">
+              <span class="search-item-title">Unstitched Banarasi Silk Suits</span>
+              <span class="search-item-desc">3-piece kurta, dupatta, and bottom sets ready for tailoring</span>
+            </div>
+            <span class="search-item-arrow">→</span>
+          </a>
+        </div>
+
+        <div class="search-section-label">PLATFORM TOOLS & FEATURES</div>
+        <div class="search-results-group">
+          <a href="#dropshipping" class="search-result-item" data-title="Blind Dropshipping zero inventory direct dispatch white label">
+            <span class="search-item-badge badge-tool">Dropship</span>
+            <div class="search-item-info">
+              <span class="search-item-title">Blind Dropshipping Service</span>
+              <span class="search-item-desc">Zero inventory dispatch with your custom sender label and logo</span>
+            </div>
+            <span class="search-item-arrow">→</span>
+          </a>
+          <a href="#white-label" class="search-result-item" data-title="White Label Catalogue Generator price watermark brand logo">
+            <span class="search-item-badge badge-tool">Tools</span>
+            <div class="search-item-info">
+              <span class="search-item-title">White-Label Catalogue Generator</span>
+              <span class="search-item-desc">Create shareable PDF catalogues with your margin & store logo</span>
+            </div>
+            <span class="search-item-arrow">→</span>
+          </a>
+          <a href="#margin-calculator" class="search-result-item" data-title="Margin Calculator profit revenue estimation monthly sales">
+            <span class="search-item-badge badge-tool">Finance</span>
+            <div class="search-item-info">
+              <span class="search-item-title">Reseller Margin & Profit Calculator</span>
+              <span class="search-item-desc">Calculate your real take-home earnings based on order volume</span>
+            </div>
+            <span class="search-item-arrow">→</span>
+          </a>
+          <a href="#agentic-commerce" class="search-result-item" data-title="Agentic Commerce AI assistant automated customer inquiry WhatsApp bot">
+            <span class="search-item-badge badge-tool">AI Agent</span>
+            <div class="search-item-info">
+              <span class="search-item-title">Agentic Commerce AI Assistant</span>
+              <span class="search-item-desc">Automated stock matching, pricing suggestions, and CRM sync</span>
+            </div>
+            <span class="search-item-arrow">→</span>
+          </a>
+        </div>
+
+        <div class="search-section-label">BUSINESS & WHOLESALE</div>
+        <div class="search-results-group">
+          <a href="#wholesale" class="search-result-item" data-title="Wholesale Bulk Ordering MOQ loom direct pricing export">
+            <span class="search-item-badge badge-wholesale">Wholesale</span>
+            <div class="search-item-info">
+              <span class="search-item-title">Bulk Wholesale & Export</span>
+              <span class="search-item-desc">Volume orders directly from Varanasi master looms with global courier</span>
+            </div>
+            <span class="search-item-arrow">→</span>
+          </a>
+          <a href="#build-your-brand" class="search-result-item" data-title="Build Your Brand Custom Woven private label boutique tags">
+            <span class="search-item-badge badge-wholesale">Brand</span>
+            <div class="search-item-info">
+              <span class="search-item-title">Custom Weaving & Private Label</span>
+              <span class="search-item-desc">Bespoke design runs, custom color dyes, and branded woven tags</span>
+            </div>
+            <span class="search-item-arrow">→</span>
+          </a>
+          <a href="#faqs" class="search-result-item" data-title="FAQs COD RTO Unboxing Video Returns Shipping Policy">
+            <span class="search-item-badge badge-help">Support</span>
+            <div class="search-item-info">
+              <span class="search-item-title">Reseller FAQs & Policies</span>
+              <span class="search-item-desc">Answers to Cash-on-Delivery, damage claims, and NDR turnaround</span>
+            </div>
+            <span class="search-item-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="search-modal-footer">
+        <div class="search-keys-hint">
+          <span><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+          <span><kbd>↵</kbd> to select</span>
+          <span><kbd>ESC</kbd> to close</span>
+        </div>
+        <div class="search-footer-brand">Weave 365 Quick Find</div>
+      </div>
+    </div>
+  </div>
 
   <!-- GSAP & ScrollTrigger Animation Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
