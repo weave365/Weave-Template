@@ -9,20 +9,26 @@ Relate renders as a cool-white SaaS surface with near-black headline ink and one
 
 | Name | Value | Token | Role |
 |------|-------|-------|------|
-| Snow Canvas | `#fcfcfc` | `--color-snow-canvas` | Page background, card surfaces, nav surface — the dominant neutral that makes blue accents feel switched on |
-| Lavender Wash | `#f0f4fe` | `--color-lavender-wash` | Subtle accent surface behind hero and feature blocks — gives cool-tinted depth without darkening the page |
-| Midnight Ink | `#020520` | `--color-midnight-ink` | Hero and section headings — near-black with a violet cast, reads warmer than pure black against white |
-| Graphite Body | `#14141e` | `--color-graphite-body` | Body text, secondary headings, product UI labels — workhorse dark neutral with cool undertone |
-| Slate Caption | `#374151` | `--color-slate-caption` | Muted body text, nav labels, list items — medium-dark gray for subordinate copy |
-| Ash Helper | `#6b7280` | `--color-ash-helper` | Helper text, metadata, timestamps — lighter gray for tertiary information |
-| Stone Divider | `#e2e8f0` | `--color-stone-divider` | Hairline borders, card edges, divider lines — barely-there separation between surfaces |
-| Fog Surface | `#f1f5f9` | `--color-fog-surface` | Input backgrounds, disabled states, subtle grouping surfaces — one shade darker than canvas |
-| Royal Signal | `#145aff` | `--color-royal-signal` | Primary brand accent — headlines, links, hero word highlight, pipeline-active dots, logo mark. Single saturated hue carries the entire brand identity |
-| Cobalt Glow | `#3b82f6` | `--color-cobalt-glow` | Blue wash for highlight backgrounds, decorative bands, and soft emphasis behind content |
-| Mint Win | `#16ca2e` | `--color-mint-win` | Green text accent for links, tags, and emphasized short phrases. Use as a supporting accent, not as a status color |
-| Coral Lost | `#f26052` | `--color-coral-lost` | Red text accent for links, tags, and emphasized short phrases. Use as a supporting accent, not as a status color |
-| Amber Pending | `#ffa64d` | `--color-amber-pending` | Orange text accent for links, tags, and emphasized short phrases. Use as a supporting accent, not as a status color |
-| Azure Focus | `#0099ff` | `--color-azure-focus` | Input focus ring glow — pure blue that distinguishes active form state from ambient blue brand color |
+| Ink | `#1a1a1a` | `--ink` | Primary body text and dark UI elements |
+| Heading | `#000000` | `--heading` | Main titles and high-contrast section headers |
+| Muted | `#3f3f3f` | `--muted` | Secondary copy, subheadings, and muted labels |
+| Line | `#e5e5e5` | `--line` | Dividers, card borders, and hairlines |
+| Paper | `#ffffff` | `--paper` | Main canvas and clean white card backgrounds |
+| Cream | `#fafafa` | `--cream` | Frosted wash and secondary section backdrop |
+| Surface | `#ffffff` | `--surface` | Elevated card surfaces |
+| Surface Soft | `#f5f5f5` | `--surface-soft` | Subtle grouping background and input states |
+| Surface Muted | `#e5e5e5` | `--surface-muted` | Outline and structural elements |
+| Surface Accent | `#d4d4d4` | `--surface-accent` | Hover borders and secondary accents |
+| Surface Strong | `#a3a3a3` | `--surface-strong` | Tertiary metadata and muted helper text |
+| Gold | `#b78646` | `--gold` | Primary luxury brand accent, CTA highlights, active pills |
+| Gold Dark | `#805d31` | `--gold-dark` | Hover states, dark accents, and active buttons |
+| Gold Mid | `#926b38` | `--gold-mid` | Intermediate gold accent |
+| Gold Light | `#bf9258` | `--gold-light` | Glows, badges, and soft highlights |
+| Gold Soft | `#c69e6a` | `--gold-soft` | Ambient warmth and badges |
+| Gold Pale | `#cdaa7c` | `--gold-pale` | Light decorative atmospheric tint |
+| Brown 900 | `#171717` | `--brown-900` | Deep contrast background blocks and dark sections |
+| Brown 800 | `#262626` | `--brown-800` | Dark surface container cards |
+| Olive | `#736d52` | `--olive` | Complementary earth/artisan accent and success tags |
 
 ## Tokens — Typography
 

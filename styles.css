@@ -108,28 +108,28 @@ button {
   background-color: #ffffff;
   background-image:
     /* Glow 1 (Left): Visible soft blue light pool entering immediately below hero */
-    radial-gradient(ellipse 55vw 850px at 0% 400px, rgba(20, 90, 255, 0.18) 0%, rgba(59, 130, 246, 0.12) 35%, rgba(99, 102, 241, 0.05) 55%, transparent 75%),
+    radial-gradient(ellipse 55vw 850px at 0% 400px, rgba(183, 134, 70, 0.18) 0%, rgba(191, 146, 88, 0.12) 35%, rgba(205, 170, 124, 0.05) 55%, transparent 75%),
     
     /* Glow 2 (Right): Flows across from Right side */
-    radial-gradient(ellipse 55vw 850px at 100% 1450px, rgba(20, 90, 255, 0.18) 0%, rgba(14, 165, 233, 0.12) 35%, rgba(59, 130, 246, 0.05) 55%, transparent 75%),
+    radial-gradient(ellipse 55vw 850px at 100% 1450px, rgba(183, 134, 70, 0.18) 0%, rgba(198, 158, 106, 0.12) 35%, rgba(191, 146, 88, 0.05) 55%, transparent 75%),
     
     /* Glow 3 (Left): Weaves back from Left side */
-    radial-gradient(ellipse 55vw 850px at 0% 2500px, rgba(99, 102, 241, 0.18) 0%, rgba(20, 90, 255, 0.12) 35%, rgba(59, 130, 246, 0.05) 55%, transparent 75%),
+    radial-gradient(ellipse 55vw 850px at 0% 2500px, rgba(205, 170, 124, 0.18) 0%, rgba(183, 134, 70, 0.12) 35%, rgba(191, 146, 88, 0.05) 55%, transparent 75%),
     
     /* Glow 4 (Right): Moves again from Right side */
-    radial-gradient(ellipse 55vw 850px at 100% 3550px, rgba(20, 90, 255, 0.18) 0%, rgba(59, 130, 246, 0.12) 35%, rgba(14, 165, 233, 0.05) 55%, transparent 75%),
+    radial-gradient(ellipse 55vw 850px at 100% 3550px, rgba(183, 134, 70, 0.18) 0%, rgba(191, 146, 88, 0.12) 35%, rgba(198, 158, 106, 0.05) 55%, transparent 75%),
     
     /* Glow 5 (Left): Sweeps from Left side */
-    radial-gradient(ellipse 55vw 850px at 0% 4600px, rgba(14, 165, 233, 0.18) 0%, rgba(20, 90, 255, 0.12) 35%, rgba(59, 130, 246, 0.05) 55%, transparent 75%),
+    radial-gradient(ellipse 55vw 850px at 0% 4600px, rgba(198, 158, 106, 0.18) 0%, rgba(183, 134, 70, 0.12) 35%, rgba(191, 146, 88, 0.05) 55%, transparent 75%),
     
     /* Glow 6 (Right): Sweeps from Right side */
-    radial-gradient(ellipse 55vw 850px at 100% 5650px, rgba(99, 102, 241, 0.18) 0%, rgba(20, 90, 255, 0.12) 35%, rgba(59, 130, 246, 0.05) 55%, transparent 75%),
+    radial-gradient(ellipse 55vw 850px at 100% 5650px, rgba(205, 170, 124, 0.18) 0%, rgba(183, 134, 70, 0.12) 35%, rgba(191, 146, 88, 0.05) 55%, transparent 75%),
     
     /* Glow 7 (Left): Enters from Left side */
-    radial-gradient(ellipse 55vw 850px at 0% 6700px, rgba(20, 90, 255, 0.18) 0%, rgba(14, 165, 233, 0.12) 35%, rgba(59, 130, 246, 0.05) 55%, transparent 75%),
+    radial-gradient(ellipse 55vw 850px at 0% 6700px, rgba(183, 134, 70, 0.18) 0%, rgba(198, 158, 106, 0.12) 35%, rgba(191, 146, 88, 0.05) 55%, transparent 75%),
     
     /* Glow 8 (Center): Soft centered radiant bloom at final conversion CTA */
-    radial-gradient(ellipse 80vw 750px at 50% 100%, rgba(20, 90, 255, 0.20) 0%, rgba(59, 130, 246, 0.12) 40%, rgba(99, 102, 241, 0.05) 60%, transparent 85%);
+    radial-gradient(ellipse 80vw 750px at 50% 100%, rgba(183, 134, 70, 0.20) 0%, rgba(191, 146, 88, 0.12) 40%, rgba(205, 170, 124, 0.05) 60%, transparent 85%);
   
   background-repeat: no-repeat;
 }
@@ -137,14 +137,14 @@ button {
 @media (max-width: 768px) {
   .site-main-flow {
     background-image:
-      radial-gradient(ellipse 85vw 600px at 0% 350px, rgba(20, 90, 255, 0.18) 0%, rgba(59, 130, 246, 0.10) 40%, transparent 75%),
-      radial-gradient(ellipse 85vw 600px at 100% 1200px, rgba(20, 90, 255, 0.18) 0%, rgba(14, 165, 233, 0.10) 40%, transparent 75%),
-      radial-gradient(ellipse 85vw 600px at 0% 2100px, rgba(99, 102, 241, 0.18) 0%, rgba(20, 90, 255, 0.10) 40%, transparent 75%),
-      radial-gradient(ellipse 85vw 600px at 100% 3000px, rgba(20, 90, 255, 0.18) 0%, rgba(59, 130, 246, 0.10) 40%, transparent 75%),
-      radial-gradient(ellipse 85vw 600px at 0% 3900px, rgba(14, 165, 233, 0.18) 0%, rgba(20, 90, 255, 0.10) 40%, transparent 75%),
-      radial-gradient(ellipse 85vw 600px at 100% 4800px, rgba(99, 102, 241, 0.18) 0%, rgba(20, 90, 255, 0.10) 40%, transparent 75%),
-      radial-gradient(ellipse 85vw 600px at 0% 5700px, rgba(20, 90, 255, 0.18) 0%, rgba(14, 165, 233, 0.10) 40%, transparent 75%),
-      radial-gradient(ellipse 95vw 600px at 50% 100%, rgba(20, 90, 255, 0.20) 0%, rgba(59, 130, 246, 0.10) 45%, transparent 80%);
+      radial-gradient(ellipse 85vw 600px at 0% 350px, rgba(183, 134, 70, 0.18) 0%, rgba(191, 146, 88, 0.10) 40%, transparent 75%),
+      radial-gradient(ellipse 85vw 600px at 100% 1200px, rgba(183, 134, 70, 0.18) 0%, rgba(198, 158, 106, 0.10) 40%, transparent 75%),
+      radial-gradient(ellipse 85vw 600px at 0% 2100px, rgba(205, 170, 124, 0.18) 0%, rgba(183, 134, 70, 0.10) 40%, transparent 75%),
+      radial-gradient(ellipse 85vw 600px at 100% 3000px, rgba(183, 134, 70, 0.18) 0%, rgba(191, 146, 88, 0.10) 40%, transparent 75%),
+      radial-gradient(ellipse 85vw 600px at 0% 3900px, rgba(198, 158, 106, 0.18) 0%, rgba(183, 134, 70, 0.10) 40%, transparent 75%),
+      radial-gradient(ellipse 85vw 600px at 100% 4800px, rgba(205, 170, 124, 0.18) 0%, rgba(183, 134, 70, 0.10) 40%, transparent 75%),
+      radial-gradient(ellipse 85vw 600px at 0% 5700px, rgba(183, 134, 70, 0.18) 0%, rgba(198, 158, 106, 0.10) 40%, transparent 75%),
+      radial-gradient(ellipse 95vw 600px at 50% 100%, rgba(183, 134, 70, 0.20) 0%, rgba(191, 146, 88, 0.10) 45%, transparent 80%);
   }
 }
 
@@ -219,7 +219,7 @@ button {
   font-size: var(--text-body-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-royal-signal);
-  background: rgba(20, 90, 255, 0.08);
+  background: rgba(183, 134, 70, 0.08);
   padding: 6px 16px;
   border-radius: var(--radius-pills);
   margin-bottom: 12px;
@@ -331,8 +331,8 @@ button {
 }
 
 .btn-signal:hover {
-  background-color: #0d46d9;
-  box-shadow: 0 4px 14px rgba(20, 90, 255, 0.25);
+  background-color: #805d31;
+  box-shadow: 0 4px 14px rgba(183, 134, 70, 0.25);
 }
 
 .btn-outline {
@@ -342,7 +342,7 @@ button {
 }
 
 .btn-outline:hover {
-  background-color: rgba(20, 90, 255, 0.05);
+  background-color: rgba(183, 134, 70, 0.05);
 }
 
 .btn-ghost {
@@ -445,7 +445,7 @@ button {
   color: var(--color-royal-signal);
   padding: 2px 8px;
   border-radius: 99px;
-  border: 1px solid rgba(20, 90, 255, 0.15);
+  border: 1px solid rgba(183, 134, 70, 0.15);
 }
 
 @media (max-width: 480px) {
@@ -479,7 +479,7 @@ button {
 
 .nav-link:hover, .nav-item:hover > .nav-link {
   color: var(--color-royal-signal);
-  background-color: rgba(20, 90, 255, 0.05);
+  background-color: rgba(183, 134, 70, 0.05);
 }
 
 .nav-link svg {
@@ -672,8 +672,8 @@ button {
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(to right, rgba(20, 90, 255, 0.075) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(20, 90, 255, 0.075) 1px, transparent 1px);
+    linear-gradient(to right, rgba(183, 134, 70, 0.075) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(183, 134, 70, 0.075) 1px, transparent 1px);
   background-size: 38px 38px;
   background-position: center top;
   mask-image: radial-gradient(ellipse 95% 80% at 50% 65%, #000000 35%, rgba(0, 0, 0, 0.4) 65%, transparent 95%);
@@ -687,9 +687,9 @@ button {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(ellipse 90% 65% at 50% 100%, rgba(59, 130, 246, 0.35) 0%, rgba(20, 90, 255, 0.18) 40%, rgba(240, 244, 254, 0.65) 70%, transparent 100%),
-    radial-gradient(circle 650px at 15% 90%, rgba(99, 102, 241, 0.22) 0%, transparent 60%),
-    radial-gradient(circle 650px at 85% 85%, rgba(14, 165, 233, 0.24) 0%, transparent 60%);
+    radial-gradient(ellipse 90% 65% at 50% 100%, rgba(191, 146, 88, 0.35) 0%, rgba(183, 134, 70, 0.18) 40%, rgba(240, 244, 254, 0.65) 70%, transparent 100%),
+    radial-gradient(circle 650px at 15% 90%, rgba(205, 170, 124, 0.22) 0%, transparent 60%),
+    radial-gradient(circle 650px at 85% 85%, rgba(198, 158, 106, 0.24) 0%, transparent 60%);
 }
 
 .hero-split-layout {
@@ -777,8 +777,8 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(20, 90, 255, 0.08);
-  border: 1px solid rgba(20, 90, 255, 0.2);
+  background: rgba(183, 134, 70, 0.08);
+  border: 1px solid rgba(183, 134, 70, 0.2);
   color: var(--color-midnight-ink);
   padding: 6px 16px;
   border-radius: var(--radius-pills);
@@ -789,7 +789,7 @@ button {
 }
 
 .hero-sell-today-badge:hover {
-  background: rgba(20, 90, 255, 0.14);
+  background: rgba(183, 134, 70, 0.14);
   border-color: var(--color-royal-signal);
   transform: translateY(-1px);
   color: var(--color-royal-signal);
@@ -887,7 +887,7 @@ button {
 .hero-bullet-item .bullet-check-icon {
   color: var(--color-royal-signal);
   flex-shrink: 0;
-  background: rgba(20, 90, 255, 0.08);
+  background: rgba(183, 134, 70, 0.08);
   border-radius: 50%;
   padding: 2.5px;
   box-sizing: content-box;
@@ -948,8 +948,8 @@ button {
 .btn-relate-hero {
   background-color: #ffffff;
   color: var(--color-royal-signal);
-  border: 1px solid rgba(20, 90, 255, 0.18);
-  box-shadow: 0 4px 20px -2px rgba(20, 90, 255, 0.2), 0 2px 6px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(183, 134, 70, 0.18);
+  box-shadow: 0 4px 20px -2px rgba(183, 134, 70, 0.2), 0 2px 6px rgba(0, 0, 0, 0.04);
   padding: 13px 32px;
   border-radius: var(--radius-buttons);
   font-size: 15px;
@@ -960,8 +960,8 @@ button {
 
 .btn-relate-hero:hover {
   background-color: #ffffff;
-  color: #0d46d9;
-  box-shadow: 0 8px 30px -4px rgba(20, 90, 255, 0.35), 0 2px 8px rgba(0, 0, 0, 0.06);
+  color: #805d31;
+  box-shadow: 0 8px 30px -4px rgba(183, 134, 70, 0.35), 0 2px 8px rgba(0, 0, 0, 0.06);
   transform: translateY(-1px);
 }
 
@@ -981,7 +981,7 @@ button {
 
 .btn-relate-outline:hover {
   background: #ffffff;
-  border-color: rgba(20, 90, 255, 0.3);
+  border-color: rgba(183, 134, 70, 0.3);
   color: var(--color-royal-signal);
 }
 
@@ -1217,7 +1217,7 @@ button {
 
 .aspect-product-sub {
   font-size: 14.5px;
-  color: #f1f5f9;
+  color: #f5f5f5;
   font-weight: 500;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   letter-spacing: 0.1px;
@@ -1347,8 +1347,8 @@ button {
 
 .benefit-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(20, 90, 255, 0.3);
-  box-shadow: 0 10px 24px -8px rgba(20, 90, 255, 0.12);
+  border-color: rgba(183, 134, 70, 0.3);
+  box-shadow: 0 10px 24px -8px rgba(183, 134, 70, 0.12);
 }
 
 .benefit-icon-wrapper {
@@ -1568,7 +1568,7 @@ button {
 .product-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.12);
-  border-color: rgba(20, 90, 255, 0.3);
+  border-color: rgba(183, 134, 70, 0.3);
 }
 
 .product-img-wrapper {
@@ -1597,7 +1597,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f0f4fe 0%, #e2e8f0 100%);
+  background: linear-gradient(135deg, #fafafa 0%, #e5e5e5 100%);
   color: var(--color-slate-caption);
   text-align: center;
   padding: 12px;
@@ -1820,7 +1820,7 @@ button {
   border-radius: 50%;
   background: var(--color-royal-signal);
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(20, 90, 255, 0.4);
+  box-shadow: 0 2px 6px rgba(183, 134, 70, 0.4);
   transition: transform 0.1s ease;
 }
 
@@ -2050,7 +2050,7 @@ button {
 }
 
 .comparison-table td.col-highlight {
-  background-color: rgba(20, 90, 255, 0.02);
+  background-color: rgba(183, 134, 70, 0.02);
   font-weight: var(--font-weight-medium);
   color: var(--color-midnight-ink);
 }
@@ -2232,7 +2232,7 @@ button {
 
 .brand-sim-preview {
   background: var(--color-lavender-wash);
-  border: 1px dashed rgba(20, 90, 255, 0.4);
+  border: 1px dashed rgba(183, 134, 70, 0.4);
   border-radius: var(--radius-cards);
   padding: var(--card-padding);
   position: relative;
@@ -2334,7 +2334,7 @@ button {
 .channel-icon.whatsapp { background-color: rgba(37, 211, 102, 0.15); color: #25d366; }
 .channel-icon.instagram { background-color: rgba(225, 48, 108, 0.15); color: #e1306c; }
 .channel-icon.facebook { background-color: rgba(24, 119, 242, 0.15); color: #1877f2; }
-.channel-icon.website { background-color: rgba(20, 90, 255, 0.15); color: var(--color-royal-signal); }
+.channel-icon.website { background-color: rgba(183, 134, 70, 0.15); color: var(--color-royal-signal); }
 
 .channel-title {
   font-size: 16px;
@@ -2594,7 +2594,7 @@ button {
 }
 
 .agentic-banner-card {
-  background: linear-gradient(135deg, #020520 0%, #0f172a 100%);
+  background: linear-gradient(135deg, #000000 0%, #0f172a 100%);
   color: #ffffff;
   border-radius: var(--radius-containers);
   padding: 24px;
@@ -2618,8 +2618,8 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(20, 90, 255, 0.25);
-  color: #93c5fd;
+  background: rgba(183, 134, 70, 0.25);
+  color: #cdaa7c;
   padding: 3px 10px;
   border-radius: 99px;
   font-size: 11px;
@@ -2675,12 +2675,12 @@ button {
 }
 
 .ai-chat-bubble {
-  background: rgba(20, 90, 255, 0.2);
+  background: rgba(183, 134, 70, 0.2);
   border-left: 3px solid var(--color-royal-signal);
   padding: 8px 12px;
   border-radius: 6px;
   font-size: 12.5px;
-  color: #e2e8f0;
+  color: #e5e5e5;
   margin-bottom: 8px;
   word-break: break-word;
 }
@@ -2889,7 +2889,7 @@ button {
    19. FINAL CTA SECTION & FOOTER (Relate Radiant Gradient)
    ========================================================================== */
 .final-cta-section {
-  background: radial-gradient(ellipse 80% 65% at 50% 50%, rgba(59, 130, 246, 0.085) 0%, rgba(99, 102, 241, 0.04) 45%, rgba(240, 244, 254, 0.2) 70%, transparent 85%);
+  background: radial-gradient(ellipse 80% 65% at 50% 50%, rgba(191, 146, 88, 0.085) 0%, rgba(205, 170, 124, 0.04) 45%, rgba(240, 244, 254, 0.2) 70%, transparent 85%);
   padding: var(--section-gap) 0;
   text-align: center;
   width: 100%;
