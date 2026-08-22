@@ -897,10 +897,10 @@ button {
 .hero-bullets-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px 24px;
-  margin-bottom: 26px;
+  gap: 10px 24px;
+  margin-bottom: 28px;
   width: 100%;
-  max-width: 640px;
+  max-width: 650px;
 }
 
 .hero-bullet-item {
@@ -910,6 +910,10 @@ button {
   font-size: 14px;
   font-weight: var(--font-weight-medium);
   color: var(--color-midnight-ink);
+}
+
+.hero-bullet-item.hero-bullet-full {
+  grid-column: span 2;
 }
 
 .hero-bullet-item .bullet-check-icon {
@@ -923,23 +927,27 @@ button {
 
 @media (max-width: 768px) {
   .hero-bullets-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 6px 10px;
-    margin: 0 auto 20px auto;
+    grid-template-columns: 1fr;
+    gap: 8px 12px;
+    margin: 0 auto 24px auto;
     text-align: left;
     max-width: 340px;
   }
 
   .hero-bullet-item {
-    font-size: 12.5px;
-    gap: 6px;
+    font-size: 13.5px;
+    gap: 8px;
+  }
+
+  .hero-bullet-item.hero-bullet-full {
+    grid-column: span 1;
   }
 }
 
 @media (max-width: 480px) {
   .hero-bullets-grid {
     grid-template-columns: 1fr;
-    max-width: 280px;
+    max-width: 320px;
   }
 }
 
