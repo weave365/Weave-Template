@@ -4177,17 +4177,17 @@ button {
 
 .footer-col-title {
   color: var(--color-midnight-ink);
-  font-size: 14.5px;
+  font-size: 13px;
   font-weight: 700;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 @media (max-width: 768px) {
   .footer-col-title {
-    font-size: 13px;
-    margin-bottom: 10px;
+    font-size: 12px;
+    margin-bottom: 8px;
   }
 }
 
@@ -4195,26 +4195,22 @@ button {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--element-gap-sm);
 }
 
 .footer-links a {
   color: var(--color-slate-caption);
-  font-size: 14px;
-  line-height: 1.5;
-  transition: color 0.15s ease;
+  font-size: 12.5px;
 }
 
 .footer-social-links a {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
 }
 
 .footer-social-links a svg {
   flex-shrink: 0;
-  width: 16px;
-  height: 16px;
   color: var(--color-royal-signal);
   transition: transform 0.15s ease;
 }
@@ -4225,10 +4221,10 @@ button {
 
 @media (max-width: 768px) {
   .footer-links {
-    gap: 8px;
+    gap: 6px;
   }
   .footer-links a {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
