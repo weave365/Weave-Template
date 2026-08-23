@@ -2239,19 +2239,6 @@ button {
 }
 
 /* ==========================================================================
-   05. "YOUR MARGIN. YOUR PROFIT" INTERACTIVE CALCULATOR
-   ========================================================================== */
-.calculator-card-wrapper {
-  background-color: #ffffff;
-  border-radius: var(--radius-containers);
-  border: 1px solid var(--color-stone-divider);
-  padding: var(--card-padding);
-  box-shadow: var(--shadow-xl-2);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  align-items: center;
-/* ==========================================================================
    05. "YOUR MARGIN. YOUR PROFIT" INTERACTIVE CALCULATOR (REVAMPED)
    ========================================================================== */
 .calculator-card-wrapper {
