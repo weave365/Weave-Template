@@ -151,6 +151,7 @@ function initGsapAnimations() {
     animateGrid('.journey-steps-grid', 0.08);
     animateGrid('#curated-products-grid', 0.1);
     animateGrid('.category-showcase-grid', 0.1);
+    animateGrid('.new-arrivals-grid', 0.1);
     animateGrid('.pillars-grid', 0.12);
     animateGrid('.channels-grid', 0.1);
     animateGrid('.pipeline-grid', 0.1);
