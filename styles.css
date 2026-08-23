@@ -4100,11 +4100,11 @@ button {
 .footer-logo-wrapper {
   display: inline-flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .footer-logo-img {
-  height: 28px;
+  height: 32px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -4112,15 +4112,15 @@ button {
 
 @media (max-width: 768px) {
   .footer-logo-img {
-    height: 24px;
+    height: 26px;
   }
 }
 
 .footer-brand-tagline {
-  font-size: 14px;
+  font-size: 15.5px;
   font-weight: var(--font-weight-bold);
   color: var(--color-midnight-ink);
-  margin-bottom: 9px;
+  margin-bottom: 10px;
   line-height: 1.45;
   white-space: nowrap;
 }
@@ -4132,32 +4132,32 @@ button {
 }
 
 .footer-brand-desc {
-  font-size: 13.5px;
-  color: var(--color-slate-caption);
-  line-height: 1.6;
-  margin-bottom: 16px;
+  font-size: 14.5px;
+  color: var(--color-graphite-body);
+  line-height: 1.65;
+  margin-bottom: 18px;
 }
 
 .footer-contact-info {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  font-size: 13px;
-  color: var(--color-slate-caption);
+  gap: 10px;
+  font-size: 14px;
+  color: var(--color-graphite-body);
 }
 
 .footer-contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 9px;
   line-height: 1.5;
 }
 
 .footer-contact-item svg {
   flex-shrink: 0;
-  margin-top: 2px;
-  width: 15px;
-  height: 15px;
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
   color: var(--color-royal-signal);
 }
 
