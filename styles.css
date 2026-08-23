@@ -3604,31 +3604,56 @@ button {
 @media (max-width: 900px) {
   .faq-cta-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 36px;
   }
 }
 
-.faq-col {
+.faq-col,
+.cta-col {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 100%;
 }
 
+.cta-col {
+  position: sticky;
+  top: 96px;
+}
+
+@media (max-width: 900px) {
+  .cta-col {
+    position: static;
+  }
+}
+
 .section-header-left {
   text-align: left;
-  margin-bottom: 4px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section-header-left .section-tag {
+  margin-bottom: 8px;
 }
 
 .section-header-left .section-title {
-  margin-top: 8px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-midnight-ink);
+  margin-top: 0;
   margin-bottom: 8px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
 }
 
 .section-header-left .section-desc {
   font-size: 14px;
   color: var(--color-slate-caption);
   line-height: 1.55;
+  margin: 0;
 }
 
 .faqs-wrapper {
@@ -3716,31 +3741,19 @@ button {
   }
 }
 
-/* Right Column: CTA Card */
-.cta-col {
-  width: 100%;
-  position: sticky;
-  top: 96px;
-}
-
-@media (max-width: 900px) {
-  .cta-col {
-    position: static;
-  }
-}
-
+/* Right Column: Final CTA Card */
 .final-cta-card {
-  background: linear-gradient(145deg, #ffffff 0%, #faf8f5 100%);
+  background: #ffffff;
   border: 1px solid var(--color-stone-divider);
   border-radius: var(--radius-containers);
-  padding: 28px 24px;
+  padding: 24px;
   box-shadow: var(--shadow-xl-2);
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  gap: 14px;
+  gap: 16px;
   position: relative;
   overflow: hidden;
 }
@@ -3755,38 +3768,19 @@ button {
   background: linear-gradient(90deg, var(--color-royal-signal), var(--color-cobalt-glow));
 }
 
-.final-cta-card .section-title {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--color-midnight-ink);
-  margin: 0;
-  line-height: 1.25;
-  text-align: left;
-}
-
-.final-cta-card .section-desc {
-  font-size: 13.5px;
-  color: var(--color-slate-caption);
-  margin: 0;
-  line-height: 1.5;
-  text-align: left;
-}
-
 .cta-features-list {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 10px;
   width: 100%;
-  padding: 14px 0;
-  border-top: 1px solid var(--color-stone-divider);
-  border-bottom: 1px solid var(--color-stone-divider);
+  padding-bottom: 4px;
 }
 
 .cta-feature-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: var(--font-weight-medium);
   color: var(--color-midnight-ink);
 }
@@ -3823,12 +3817,12 @@ button {
 
 @media (max-width: 768px) {
   .final-cta-card {
-    padding: 20px 16px;
+    padding: 18px 16px;
     border-radius: 16px;
-    gap: 12px;
+    gap: 14px;
   }
-  .final-cta-card .section-title {
-    font-size: 20px;
+  .section-header-left .section-title {
+    font-size: 22px;
   }
 }
 
