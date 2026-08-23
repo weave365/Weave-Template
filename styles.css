@@ -502,7 +502,9 @@ button {
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 250px;
+  min-width: 150px;
+  width: max-content;
+  max-width: 280px;
   max-height: calc(100vh - 84px);
   overflow-y: auto;
   background-color: #ffffff;
@@ -535,11 +537,12 @@ button {
 
 .dropdown-item {
   display: block;
-  padding: 8px 12px;
+  padding: 8px 14px;
   border-radius: var(--radius-lg);
   font-size: 14px;
   color: var(--color-graphite-body);
   font-weight: var(--font-weight-medium);
+  white-space: nowrap;
   transition: all 0.15s ease;
 }
 
