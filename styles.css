@@ -4177,16 +4177,16 @@ button {
 
 .footer-col-title {
   color: var(--color-midnight-ink);
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 13px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 @media (max-width: 768px) {
   .footer-col-title {
-    font-size: 12px;
+    font-size: 12.5px;
     margin-bottom: 8px;
   }
 }
@@ -4195,22 +4195,25 @@ button {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--element-gap-sm);
+  gap: 7px;
 }
 
 .footer-links a {
   color: var(--color-slate-caption);
-  font-size: 12.5px;
+  font-size: 13.5px;
+  line-height: 1.45;
 }
 
 .footer-social-links a {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 7.5px;
 }
 
 .footer-social-links a svg {
   flex-shrink: 0;
+  width: 15px;
+  height: 15px;
   color: var(--color-royal-signal);
   transition: transform 0.15s ease;
 }
@@ -4224,7 +4227,7 @@ button {
     gap: 6px;
   }
   .footer-links a {
-    font-size: 12px;
+    font-size: 12.5px;
   }
 }
 
