@@ -5062,6 +5062,41 @@ kbd {
     font-size: 14.5px;
   }
 
+  /* Hero Media Column & Image Centering & Middle Alignment */
+  .hero-split-layout {
+    gap: 16px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .hero-media-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0;
+    padding: 8px 0 0;
+  }
+
+  .hero-aspect-frame {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-aspect-ratio-box {
+    width: 100%;
+  }
+
+  .hero-banarasi-showcase-img {
+    object-position: center center;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
   /* Hero Media Overlays */
   .card-status-left,
   .status-pill-green {
