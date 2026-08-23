@@ -55,40 +55,45 @@ button {
 }
 
 /* ==========================================================================
-   LAYOUT CONTAINERS & RESPONSIVE BREAKPOINTS
-   - Large Desktop (1920px Viewport): 1600px Container
-   - Desktop / Laptop (1440px Viewport): 1320px Container
-   - Tablet (768px Viewport): 720px Container
-   - Mobile (390px Viewport): 358px Container
+   LAYOUT CONTAINERS & RESPONSIVE BREAKPOINTS (SOURCE OF TRUTH)
+   - Desktop: 1920px Viewport -> 1600px Container
+   - Laptop:  1440px Viewport -> 1320px Container
+   - Tablet:  768px Viewport  -> 720px Container
+   - Mobile:  390px Viewport  -> 358px Container
    ========================================================================== */
 .container {
   width: 100%;
-  max-width: var(--container-large-desktop); /* 1600px */
+  max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 32px;
+  padding-right: 32px;
   box-sizing: border-box;
 }
 
+/* Laptop Tier: 1440px Viewport (1320px Container) */
 @media (max-width: 1599px) {
   .container {
-    max-width: var(--container-desktop-laptop); /* 1320px */
+    max-width: 1320px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
+/* Tablet Tier: 768px Viewport (720px Container) */
 @media (max-width: 991px) {
   .container {
-    max-width: var(--container-tablet); /* 720px */
-    padding-left: 16px;
-    padding-right: 16px;
+    max-width: 720px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
+/* Mobile Tier: 390px Viewport (358px Container) */
 @media (max-width: 575px) {
   .container {
     width: 100%;
-    max-width: var(--container-mobile); /* 358px */
+    max-width: 358px;
     padding-left: 0;
     padding-right: 0;
     margin-left: auto;
@@ -3846,3 +3851,208 @@ kbd {
     display: none;
   }
 }
+
+/* ==========================================================================
+   RESPONSIVE DESIGN SYSTEM (SPECIFICATIONS SOURCE OF TRUTH)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESKTOP TIER (1920px Target Viewport | 1600px Max-Width Container)
+   - Full widescreen canvas
+   - Spacious 2-column 100vh hero
+   - 4:3 media ratio
+   - 4-column feature grids
+   -------------------------------------------------------------------------- */
+@media (min-width: 1441px) {
+  .hero-section {
+    min-height: 100vh;
+  }
+
+  .hero-split-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .hero-aspect-ratio-box {
+    aspect-ratio: 4 / 3;
+  }
+
+  .benefits-grid,
+  .channels-grid,
+  .quadrant-grid,
+  .trust-pillars-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. LAPTOP TIER (1440px Target Viewport | 1320px Max-Width Container)
+   - Fluid scaling within 1320px bounds
+   - 36px hero gap
+   - Optimized typography tracking
+   -------------------------------------------------------------------------- */
+@media (max-width: 1440px) and (min-width: 992px) {
+  .hero-split-layout {
+    gap: 36px;
+  }
+
+  .hero-headline {
+    letter-spacing: -0.02em;
+  }
+
+  .section-title {
+    letter-spacing: -0.015em;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. TABLET TIER (768px Target Viewport | 720px Max-Width Container)
+   - 2-column grids where appropriate
+   - Collapsible mobile navigation drawer
+   - Horizontally scrollable comparison tables
+   - Stacked hero
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .hero-section {
+    min-height: auto;
+    padding-top: 84px;
+    padding-bottom: 36px;
+  }
+
+  .hero-split-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* 2-column grids where appropriate */
+  .benefits-grid,
+  .steps-grid,
+  .products-grid,
+  .category-showcase-grid,
+  .channels-grid,
+  .trust-pillars-grid,
+  .education-cards-grid,
+  .ladder-grid,
+  .quadrant-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  /* Horizontally scrollable comparison tables */
+  .comparison-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+
+  .comparison-table {
+    min-width: 620px;
+    width: 100%;
+  }
+
+  /* Stacked Profit Calculator */
+  .calculator-card-wrapper {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. MOBILE TIER (390px Target Viewport | 358px Max-Width Container)
+   - Single-column flow
+   - Full-width touch-friendly CTAs
+   - 12px card padding
+   - Zero horizontal overflow
+   -------------------------------------------------------------------------- */
+@media (max-width: 575px) {
+  /* Single-column flow */
+  .benefits-grid,
+  .steps-grid,
+  .products-grid,
+  .category-showcase-grid,
+  .channels-grid,
+  .trust-pillars-grid,
+  .education-cards-grid,
+  .ladder-grid,
+  .quadrant-grid,
+  .footer-grid,
+  .pipeline-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* 12px card padding across all cards */
+  .product-card,
+  .na-product-card,
+  .benefit-card,
+  .category-card,
+  .channel-card,
+  .trust-box,
+  .edu-card,
+  .step-card,
+  .ladder-card,
+  .calculator-card-wrapper,
+  .calc-interactive-pane,
+  .calc-display-pane,
+  .faq-item {
+    padding: 12px;
+  }
+
+  .na-card-body,
+  .category-card-body,
+  .product-body {
+    padding: 12px 10px;
+  }
+
+  /* Full-width touch-friendly CTAs */
+  .hero-ctas-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-ctas-row .btn,
+  .btn-signal.btn-lg,
+  .btn-primary.btn-lg,
+  .btn-outline.btn-lg,
+  .final-cta-card .btn {
+    width: 100%;
+    min-height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .product-card-actions,
+  .na-actions {
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .product-card-actions .btn,
+  .btn-na-sell,
+  .btn-na-buy {
+    width: 100%;
+    min-height: 38px;
+  }
+
+  /* Zero horizontal overflow safeguards */
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .site-main-flow,
+  .hero-section,
+  .section,
+  .header {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
