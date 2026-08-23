@@ -502,7 +502,7 @@ button {
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 150px;
+  min-width: 100%;
   width: max-content;
   max-width: 280px;
   max-height: calc(100vh - 84px);
@@ -510,7 +510,7 @@ button {
   background-color: #ffffff;
   border: 1px solid var(--color-stone-divider);
   border-radius: var(--radius-2xl);
-  padding: 8px;
+  padding: 6px;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
   opacity: 0;
   visibility: hidden;
