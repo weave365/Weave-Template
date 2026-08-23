@@ -1634,7 +1634,8 @@ button {
   background-color: #ffffff;
   border: 1px solid var(--color-stone-divider);
   border-radius: var(--radius-cards);
-  padding: 12px;
+  padding: 0;
+  overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: all 0.25s ease;
   display: flex;
@@ -1650,10 +1651,10 @@ button {
 .product-img-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 3;
   height: auto;
   background-color: var(--color-fog-surface);
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1662,9 +1663,8 @@ button {
 
 @media (max-width: 768px) {
   .product-img-wrapper {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 3;
     height: auto;
-    border-radius: 10px;
   }
 }
 
@@ -1713,7 +1713,7 @@ button {
 }
 
 .product-body {
-  padding-top: 10px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -1870,7 +1870,8 @@ button {
   background-color: #ffffff;
   border: 1px solid var(--color-stone-divider);
   border-radius: var(--radius-cards);
-  padding: 12px;
+  padding: 0;
+  overflow: hidden;
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
@@ -1889,10 +1890,10 @@ button {
 .category-visual-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
-  border-radius: var(--radius-lg);
+  aspect-ratio: 4 / 3;
+  border-radius: 0;
   overflow: hidden;
-  margin-bottom: 12px;
+  margin-bottom: 0;
   background-color: var(--color-fog-surface);
 }
 
@@ -1934,8 +1935,8 @@ button {
 }
 
 .category-icon-wrapper {
-  width: 54px;
-  height: 54px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: #ffffff;
   display: flex;
@@ -1943,7 +1944,7 @@ button {
   justify-content: center;
   color: var(--color-royal-signal);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   transition: transform 0.2s ease;
 }
 
@@ -1972,29 +1973,30 @@ button {
 }
 
 .category-card-body {
+  padding: 12px 14px 14px 14px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
 .category-card-title {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--color-midnight-ink);
-  margin-bottom: 3px;
+  margin-bottom: 2px;
   line-height: 1.25;
 }
 
 .category-card-desc {
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--color-slate-caption);
-  line-height: 1.4;
-  margin-bottom: 12px;
+  line-height: 1.35;
+  margin-bottom: 10px;
 }
 
 .category-card-link {
   margin-top: auto;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--color-royal-signal);
   display: inline-flex;
