@@ -3856,11 +3856,13 @@ button {
 }
 
 .site-footer {
-  background: linear-gradient(160deg, #0d0f17 0%, #151a28 45%, #1c1815 100%);
-  color: #94a3b8;
+  background: 
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(191, 146, 88, 0.12) 0%, rgba(183, 134, 70, 0.05) 45%, transparent 75%),
+    linear-gradient(180deg, #faf7f2 0%, #f5efe6 50%, #ede4d6 100%);
+  color: var(--color-slate-caption);
   padding-top: 56px;
   padding-bottom: 28px;
-  border-top: 1px solid rgba(183, 134, 70, 0.22);
+  border-top: 1px solid var(--color-stone-divider);
   font-size: 13.5px;
   width: 100%;
   position: relative;
@@ -3873,8 +3875,8 @@ button {
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(183, 134, 70, 0.6) 35%, rgba(191, 146, 88, 0.85) 50%, rgba(183, 134, 70, 0.6) 65%, transparent 100%);
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(183, 134, 70, 0.4) 30%, rgba(191, 146, 88, 0.7) 50%, rgba(183, 134, 70, 0.4) 70%, transparent 100%);
 }
 
 @media (max-width: 768px) {
@@ -3910,9 +3912,6 @@ button {
 .footer-logo-wrapper {
   display: inline-flex;
   align-items: center;
-  background: #ffffff;
-  padding: 5px 12px;
-  border-radius: 8px;
   margin-bottom: 14px;
 }
 
@@ -3930,7 +3929,7 @@ button {
 }
 
 .footer-brand-title {
-  color: #ffffff;
+  color: var(--color-midnight-ink);
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 10px;
@@ -3945,6 +3944,7 @@ button {
 
 .footer-brand-desc {
   font-size: 12.5px;
+  color: var(--color-slate-caption);
   line-height: 1.6;
   max-width: 280px;
   margin-bottom: 16px;
@@ -3959,9 +3959,9 @@ button {
 }
 
 .footer-col-title {
-  color: #ffffff;
+  color: var(--color-midnight-ink);
   font-size: 13px;
-  font-weight: var(--font-weight-semibold);
+  font-weight: 700;
   margin-bottom: 12px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -3981,6 +3981,10 @@ button {
   gap: var(--element-gap-sm);
 }
 
+.footer-links a {
+  color: var(--color-slate-caption);
+}
+
 @media (max-width: 768px) {
   .footer-links {
     gap: 6px;
@@ -3989,11 +3993,11 @@ button {
 }
 
 .footer-links a:hover {
-  color: #ffffff;
+  color: var(--color-royal-signal);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--color-stone-divider);
   padding-top: 20px;
   display: flex;
   align-items: center;
@@ -4001,6 +4005,11 @@ button {
   flex-wrap: wrap;
   gap: var(--element-gap-lg);
   font-size: 12px;
+  color: var(--color-slate-caption);
+}
+
+.footer-bottom a:hover {
+  color: var(--color-royal-signal);
 }
 
 @media (max-width: 768px) {
