@@ -2791,7 +2791,7 @@ button {
   font-weight: 800;
   margin-right: 10px;
   flex-shrink: 0;
-  vertical-align: -2px;
+  vertical-align: middle;
 }
 
 .feature-cross {
@@ -2807,7 +2807,13 @@ button {
   font-weight: 800;
   margin-right: 10px;
   flex-shrink: 0;
-  vertical-align: -2px;
+  vertical-align: middle;
+}
+
+.feature-check svg,
+.feature-cross svg {
+  display: block;
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
@@ -2821,8 +2827,13 @@ button {
   .feature-cross {
     width: 18px;
     height: 18px;
-    font-size: 10px;
     margin-right: 6px;
+  }
+
+  .feature-check svg,
+  .feature-cross svg {
+    width: 10px;
+    height: 10px;
   }
 }
 
