@@ -2936,18 +2936,20 @@ button {
   background-color: #ffffff;
   border-radius: var(--radius-containers);
   border: 1px solid var(--color-stone-divider);
-  padding: var(--card-padding);
+  padding: 24px;
   box-shadow: var(--shadow-xl-2);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 28px;
+  align-items: center;
   width: 100%;
 }
 
 @media (max-width: 992px) {
   .whitelabel-simulator-card {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 20px;
+    padding: 18px;
     border-radius: 16px;
   }
 }
@@ -2956,7 +2958,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: var(--element-gap-lg);
-  padding: var(--card-padding);
+  padding: 0;
 }
 
 @media (max-width: 768px) {
@@ -3004,46 +3006,48 @@ button {
 }
 
 .brand-sim-preview {
-  background: var(--color-lavender-wash);
-  border: 1px dashed rgba(183, 134, 70, 0.4);
-  border-radius: var(--radius-cards);
-  padding: var(--card-padding);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
   position: relative;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
   .brand-sim-preview {
-    padding: 10px;
-    border-radius: 12px;
+    padding: 0;
   }
 }
 
 .sim-preview-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #ffffff;
+  background: var(--color-fog-surface);
   border: 1px solid var(--color-stone-divider);
-  padding: 2px 8px;
+  padding: 3px 10px;
   border-radius: 99px;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: var(--font-weight-semibold);
-  color: var(--color-royal-signal);
+  color: var(--color-slate-caption);
+  white-space: nowrap;
 }
 
 .customer-catalogue-mockup {
   background: #ffffff;
   border-radius: var(--radius-cards);
   border: 1px solid var(--color-stone-divider);
-  padding: var(--card-padding);
+  padding: 18px 20px;
   box-shadow: var(--shadow-sm);
   width: 100%;
+  position: relative;
 }
 
 @media (max-width: 768px) {
   .customer-catalogue-mockup {
-    padding: 10px;
+    padding: 14px 12px;
     border-radius: 10px;
   }
 }
