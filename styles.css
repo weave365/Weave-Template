@@ -1651,7 +1651,7 @@ button {
 .product-img-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
   height: auto;
   background-color: var(--color-fog-surface);
   border-radius: 0;
@@ -1663,7 +1663,7 @@ button {
 
 @media (max-width: 768px) {
   .product-img-wrapper {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 4;
     height: auto;
   }
 }
