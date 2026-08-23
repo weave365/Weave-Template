@@ -1748,7 +1748,7 @@ button {
 
 .product-price-breakdown {
   background-color: var(--color-snow-canvas);
-  border: 1px solid var(--color-stone-divider);
+  border: none;
   border-radius: var(--radius-lg);
   padding: 8px 10px;
   margin-bottom: 10px;
