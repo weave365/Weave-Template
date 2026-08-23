@@ -2843,53 +2843,70 @@ button {
 .quadrant-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 20px;
+  align-items: stretch;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .quadrant-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 16px;
   }
 }
 
 @media (max-width: 576px) {
   .quadrant-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 14px;
   }
 }
 
 .quadrant-card {
   background-color: #ffffff;
   border: 1px solid var(--color-stone-divider);
-  border-radius: var(--radius-cards);
-  padding: var(--card-padding);
-  box-shadow: var(--shadow-sm);
+  border-radius: 16px;
+  padding: 24px 20px;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.quadrant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px -4px rgba(183, 134, 70, 0.15);
+  border-color: rgba(183, 134, 70, 0.35);
 }
 
 .quadrant-pillar-title {
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-royal-signal);
-  margin-bottom: 4px;
+  background: rgba(183, 134, 70, 0.08);
+  border: 1px solid rgba(183, 134, 70, 0.18);
+  padding: 4px 10px;
+  border-radius: 99px;
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: 12px;
 }
 
 .quadrant-title {
-  font-size: 18px;
-  font-weight: var(--font-weight-semibold);
+  font-size: 20px;
+  font-weight: 700;
   color: var(--color-midnight-ink);
-  margin-bottom: var(--element-gap);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
 }
 
 @media (max-width: 768px) {
   .quadrant-title {
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 18px;
+    margin-bottom: 12px;
   }
 }
 
@@ -2897,29 +2914,32 @@ button {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--element-gap-sm);
+  gap: 10px;
+  padding: 0;
+  margin: 0;
 }
 
 .quadrant-list-item {
-  font-size: 13px;
-  color: var(--color-slate-caption);
+  font-size: 13.5px;
+  color: #475569;
   display: flex;
-  align-items: center;
-  gap: 6px;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.45;
 }
 
 @media (max-width: 768px) {
   .quadrant-list-item {
-    font-size: 12.5px;
+    font-size: 13px;
   }
 }
 
-.quadrant-list-item::before {
-  content: "•";
+.quadrant-list-item .pillar-bullet-icon {
+  width: 14px;
+  height: 14px;
   color: var(--color-royal-signal);
-  font-size: 16px;
-  line-height: 0;
   flex-shrink: 0;
+  margin-top: 3px;
 }
 
 /* ==========================================================================
