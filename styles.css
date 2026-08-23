@@ -3236,7 +3236,7 @@ button {
   gap: 16px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .trust-pillars-grid {
     grid-template-columns: 1fr;
     gap: 10px;
@@ -4160,8 +4160,7 @@ kbd {
 
   .benefits-grid,
   .channels-grid,
-  .quadrant-grid,
-  .trust-pillars-grid {
+  .quadrant-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -4211,7 +4210,6 @@ kbd {
   .products-grid,
   .category-showcase-grid,
   .channels-grid,
-  .trust-pillars-grid,
   .education-cards-grid,
   .ladder-grid,
   .quadrant-grid {
