@@ -4025,7 +4025,7 @@ button {
 
 .footer-brand-col {
   flex: 0 0 auto;
-  max-width: 370px;
+  max-width: 400px;
 }
 
 .footer-nav-grid {
@@ -4117,10 +4117,10 @@ button {
 }
 
 .footer-brand-tagline {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: var(--font-weight-bold);
   color: var(--color-midnight-ink);
-  margin-bottom: 8px;
+  margin-bottom: 9px;
   line-height: 1.45;
   white-space: nowrap;
 }
@@ -4132,35 +4132,38 @@ button {
 }
 
 .footer-brand-desc {
-  font-size: 12px;
+  font-size: 13.5px;
   color: var(--color-slate-caption);
   line-height: 1.6;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .footer-contact-info {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  font-size: 12px;
+  gap: 8px;
+  font-size: 13px;
   color: var(--color-slate-caption);
 }
 
 .footer-contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 7px;
-  line-height: 1.45;
+  gap: 8px;
+  line-height: 1.5;
 }
 
 .footer-contact-item svg {
   flex-shrink: 0;
   margin-top: 2px;
+  width: 15px;
+  height: 15px;
   color: var(--color-royal-signal);
 }
 
 .footer-contact-item strong {
   color: var(--color-midnight-ink);
+  font-weight: 600;
 }
 
 .footer-contact-item a {
