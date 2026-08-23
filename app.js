@@ -311,6 +311,50 @@ const CURATED_PRODUCTS = [
     category: 'under1500',
     stock: 'In Stock (120 pcs)',
     icon: `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>`
+  },
+  {
+    id: 'MASH-418',
+    name: 'Banarasi Mashru Silk Festive Saree',
+    fabric: 'Mashru Weave · Contrast Zari Border',
+    basePrice: 2450,
+    suggestedMin: 3499,
+    suggestedMax: 3899,
+    category: 'festive',
+    stock: 'In Stock (54 pcs)',
+    icon: `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>`
+  },
+  {
+    id: 'SUIT-512',
+    name: 'Pure Katan Silk 3-Piece Suit Set',
+    fabric: 'Unstitched Kurta, Dupatta & Bottom',
+    basePrice: 1850,
+    suggestedMin: 2699,
+    suggestedMax: 2999,
+    category: 'high-margin',
+    stock: 'Fast Moving',
+    icon: `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>`
+  },
+  {
+    id: 'LEH-780',
+    name: 'Royal Banarasi Brocade Lehenga',
+    fabric: 'Semi-Stitched Bridal & Sangeet Flairs',
+    basePrice: 3950,
+    suggestedMin: 5999,
+    suggestedMax: 6999,
+    category: 'festive',
+    stock: 'Exclusive Batch',
+    icon: `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>`
+  },
+  {
+    id: 'DUP-115',
+    name: 'Banarasi Tanchoi Zari Stole Dupatta',
+    fabric: 'Fine Tanchoi Silk · Handwoven Pallu',
+    basePrice: 799,
+    suggestedMin: 1299,
+    suggestedMax: 1499,
+    category: 'under1500',
+    stock: 'In Stock (96 pcs)',
+    icon: `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`
   }
 ];
 
