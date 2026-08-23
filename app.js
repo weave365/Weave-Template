@@ -329,8 +329,6 @@ function initCuratedProducts() {
             <div style="font-size: 13px; font-weight: 600; color: var(--color-midnight-ink);">${prod.name}</div>
             <div style="font-size: 11px; color: var(--color-ash-helper); margin-top: 4px;">Authentic Varanasi Weave</div>
           </div>
-          <span class="product-stock-tag">● ${prod.stock}</span>
-          <span class="product-code-tag">${prod.id}</span>
         </div>
         <div class="product-body">
           <h3 class="product-name">${prod.name}</h3>
