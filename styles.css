@@ -2264,11 +2264,11 @@ button {
   background-color: #ffffff;
   border-radius: var(--radius-containers);
   border: 1px solid var(--color-stone-divider);
-  padding: 32px;
+  padding: 28px;
   box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.06);
   display: grid;
   grid-template-columns: 1.15fr 1fr;
-  gap: 32px;
+  gap: 28px;
   align-items: stretch;
   width: 100%;
 }
@@ -2276,8 +2276,8 @@ button {
 @media (max-width: 991px) {
   .calculator-card-wrapper {
     grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 20px;
+    gap: 20px;
+    padding: 16px;
     border-radius: 16px;
   }
 }
@@ -2285,8 +2285,10 @@ button {
 .calc-interactive-pane {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   justify-content: space-between;
+  gap: 16px;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .calc-control-group {
@@ -2302,13 +2304,13 @@ button {
 }
 
 .calc-input-label {
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 600;
   color: var(--color-midnight-ink);
 }
 
 .calc-val-pill {
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 700;
   color: var(--gold-dark);
   background-color: rgba(183, 134, 70, 0.1);
@@ -2358,7 +2360,7 @@ button {
 .calc-range-bounds {
   display: flex;
   justify-content: space-between;
-  font-size: 11.5px;
+  font-size: 11px;
   color: #6c757d;
   font-weight: 500;
 }
@@ -2368,18 +2370,18 @@ button {
   background-color: #faf8f5;
   border: 1px solid #ede4d8;
   border-radius: 12px;
-  padding: 14px 16px;
+  padding: 12px 14px;
 }
 
 .calc-formula-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .formula-title {
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -2387,7 +2389,7 @@ button {
 }
 
 .formula-live-badge {
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 600;
   color: var(--gold-dark);
   background: #ffffff;
@@ -2407,14 +2409,14 @@ button {
   background: #ffffff;
   border: 1px solid #e2d9cd;
   border-radius: 8px;
-  padding: 6px 10px;
+  padding: 6px 8px;
   text-align: center;
   flex: 1;
 }
 
 .formula-node-lbl {
   display: block;
-  font-size: 10px;
+  font-size: 9.5px;
   color: #6c757d;
   font-weight: 500;
   margin-bottom: 2px;
@@ -2422,7 +2424,7 @@ button {
 
 .formula-node-val {
   display: block;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 700;
   color: var(--color-midnight-ink);
   font-variant-numeric: tabular-nums;
@@ -2442,7 +2444,7 @@ button {
 }
 
 .formula-node-op {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: #a0988e;
 }
@@ -2458,7 +2460,7 @@ button {
   background-color: #ffffff;
   border: 1px solid var(--color-stone-divider);
   border-radius: 10px;
-  padding: 12px 14px;
+  padding: 10px 12px;
   text-align: center;
 }
 
@@ -2468,7 +2470,7 @@ button {
 }
 
 .calc-stat-label {
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 600;
   color: var(--color-slate-caption);
   text-transform: uppercase;
@@ -2476,7 +2478,7 @@ button {
 }
 
 .calc-stat-val {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--color-midnight-ink);
   margin-top: 2px;
@@ -2487,23 +2489,25 @@ button {
   color: #1e7e34;
 }
 
-/* Visual Live Customer Preview Pane */
-.calc-visual-preview-pane {
-  background: linear-gradient(145deg, #faf7f2 0%, #f4ede2 100%);
+/* Visual Live Customer Preview Card (Direct Right-Side Card) */
+.calc-preview-card {
+  background: linear-gradient(145deg, #faf7f2 0%, #f7f2ea 100%);
+  border-radius: 14px;
   border: 1px solid #e8decb;
-  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-.calc-preview-card {
-  background: #ffffff;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06);
-  padding: 16px;
+@media (max-width: 991px) {
+  .calc-preview-card {
+    padding: 16px;
+    height: auto;
+  }
 }
 
 .preview-card-header {
@@ -2511,12 +2515,12 @@ button {
   align-items: center;
   gap: 10px;
   padding-bottom: 12px;
-  border-bottom: 1px solid #f0eae1;
+  border-bottom: 1px solid #ede4d5;
 }
 
 .store-avatar-box {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
   color: #ffffff;
@@ -2524,7 +2528,7 @@ button {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 12px;
   flex-shrink: 0;
 }
 
@@ -2533,13 +2537,13 @@ button {
 }
 
 .store-name {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--color-midnight-ink);
 }
 
 .store-sub {
-  font-size: 11px;
+  font-size: 10.5px;
   color: #6c757d;
 }
 
@@ -2547,7 +2551,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 600;
   color: #1e7e34;
   background-color: rgba(40, 167, 69, 0.1);
@@ -2558,14 +2562,18 @@ button {
 
 .preview-product-card {
   display: flex;
-  gap: 14px;
-  padding: 14px 0;
+  gap: 12px;
+  padding: 12px 14px;
+  margin: 12px 0;
+  background: #ffffff;
+  border: 1px solid #ebe2d4;
+  border-radius: 10px;
   align-items: center;
 }
 
 .preview-product-img {
-  width: 64px;
-  height: 64px;
+  width: 54px;
+  height: 54px;
   border-radius: 8px;
   background: linear-gradient(135deg, #fdfbf9 0%, #ebe5df 100%);
   border: 1px solid #e8dfd3;
@@ -2581,49 +2589,50 @@ button {
 }
 
 .preview-product-title {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--color-midnight-ink);
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 .preview-product-specs {
-  font-size: 11px;
+  font-size: 10.5px;
   color: #6c757d;
   line-height: 1.35;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .preview-pricing-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .preview-price-tag {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
   color: var(--gold-dark);
   font-variant-numeric: tabular-nums;
 }
 
 .preview-shipping-badge {
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 600;
   color: #495057;
   background-color: #f1f3f5;
-  padding: 2px 7px;
+  padding: 2px 6px;
   border-radius: 4px;
 }
 
 .preview-payout-box {
-  background-color: #faf8f5;
+  background-color: #ffffff;
   border-radius: 8px;
   border: 1px dashed #decbb5;
   padding: 10px 14px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .payout-item {
@@ -2632,14 +2641,14 @@ button {
 
 .payout-lbl {
   display: block;
-  font-size: 10.5px;
+  font-size: 10px;
   color: #6c757d;
   font-weight: 500;
 }
 
 .payout-val {
   display: block;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 700;
   color: var(--color-midnight-ink);
   font-variant-numeric: tabular-nums;
@@ -2651,24 +2660,24 @@ button {
 
 .payout-divider {
   width: 1px;
-  height: 24px;
-  background-color: #decbb5;
+  height: 22px;
+  background-color: #ede4d5;
 }
 
 .preview-guarantee-note {
-  margin-top: 14px;
-  font-size: 11.5px;
+  font-size: 11px;
   color: #6c757d;
   display: flex;
   align-items: flex-start;
   gap: 6px;
-  line-height: 1.45;
+  line-height: 1.4;
+  margin-top: auto;
 }
 
 .preview-guarantee-note svg {
   color: #1e7e34;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 /* ==========================================================================
