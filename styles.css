@@ -3855,6 +3855,131 @@ button {
   }
 }
 
+/* ==========================================================================
+   20. ECOSYSTEM DIRECTORY SECTION (4 Horizontal Columns)
+   ========================================================================== */
+.ecosystem-directory-section {
+  padding-top: 48px;
+  padding-bottom: 56px;
+  border-top: 1px solid var(--color-stone-divider);
+  position: relative;
+}
+
+.ecosystem-header {
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+.ecosystem-header .section-tag {
+  margin-bottom: 10px;
+  display: inline-flex;
+}
+
+.ecosystem-header .section-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-midnight-ink);
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+  .ecosystem-header .section-title {
+    font-size: 22px;
+  }
+}
+
+.ecosystem-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1100px) {
+  .ecosystem-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ecosystem-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.ecosystem-card {
+  background: #ffffff;
+  border: 1px solid var(--color-stone-divider);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.ecosystem-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(183, 134, 70, 0.08);
+  border-color: rgba(183, 134, 70, 0.35);
+}
+
+.ecosystem-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-midnight-ink);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-stone-divider);
+}
+
+.ecosystem-icon-box {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(183, 134, 70, 0.1);
+  color: var(--color-royal-signal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ecosystem-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ecosystem-links a {
+  color: var(--color-slate-caption);
+  font-size: 13px;
+  line-height: 1.45;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.ecosystem-links a::before {
+  content: '›';
+  color: var(--color-royal-signal);
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.ecosystem-links a:hover {
+  color: var(--color-royal-signal);
+  transform: translateX(2px);
+}
+
 .site-footer {
   background: 
     radial-gradient(ellipse 80% 50% at 50% 0%, rgba(191, 146, 88, 0.06) 0%, transparent 65%),
