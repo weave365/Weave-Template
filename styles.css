@@ -2257,13 +2257,27 @@ button {
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   align-items: center;
+/* ==========================================================================
+   05. "YOUR MARGIN. YOUR PROFIT" INTERACTIVE CALCULATOR (REVAMPED)
+   ========================================================================== */
+.calculator-card-wrapper {
+  background-color: #ffffff;
+  border-radius: var(--radius-containers);
+  border: 1px solid var(--color-stone-divider);
+  padding: 32px;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.06);
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 32px;
+  align-items: stretch;
   width: 100%;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .calculator-card-wrapper {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 24px;
+    padding: 20px;
     border-radius: 16px;
   }
 }
@@ -2271,113 +2285,240 @@ button {
 .calc-interactive-pane {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: var(--card-padding);
-}
-
-@media (max-width: 768px) {
-  .calc-interactive-pane {
-    padding: 0;
-    gap: 12px;
-  }
+  gap: 20px;
+  justify-content: space-between;
 }
 
 .calc-control-group {
   display: flex;
   flex-direction: column;
-  gap: var(--element-gap-sm);
+  gap: 8px;
 }
 
 .calc-label-row {
   display: flex;
   justify-content: space-between;
-  font-size: 13.5px;
-  font-weight: var(--font-weight-medium);
+  align-items: center;
+}
+
+.calc-input-label {
+  font-size: 14px;
+  font-weight: 600;
   color: var(--color-midnight-ink);
 }
 
-@media (max-width: 768px) {
-  .calc-label-row {
-    font-size: 12.5px;
-  }
+.calc-val-pill {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold-dark);
+  background-color: rgba(183, 134, 70, 0.1);
+  padding: 3px 12px;
+  border-radius: 100px;
+  border: 1px solid rgba(183, 134, 70, 0.25);
+  font-variant-numeric: tabular-nums;
+}
+
+.calc-val-pill.calc-val-profit {
+  color: #1e7e34;
+  background-color: rgba(40, 167, 69, 0.1);
+  border-color: rgba(40, 167, 69, 0.25);
 }
 
 .calc-range-slider {
   width: 100%;
   height: 6px;
   -webkit-appearance: none;
-  background: var(--color-stone-divider);
-  border-radius: 4px;
+  background: #e9ecef;
+  border-radius: 6px;
   outline: none;
+  cursor: pointer;
 }
 
 .calc-range-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background: var(--color-royal-signal);
+  background: #ffffff;
+  border: 4px solid var(--gold);
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(183, 134, 70, 0.4);
-  transition: transform 0.1s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+  transition: transform 0.12s ease, border-color 0.12s ease;
 }
 
 .calc-range-slider::-webkit-slider-thumb:hover {
   transform: scale(1.15);
+  border-color: var(--gold-dark);
 }
 
-.calc-visual-preview-pane {
-  background: linear-gradient(135deg, var(--color-lavender-wash) 0%, #ffffff 100%);
-  border: 1px solid var(--color-stone-divider);
-  border-radius: var(--radius-cards);
-  padding: var(--card-padding);
-  position: relative;
-  width: 100%;
+.calc-range-slider.calc-slider-profit::-webkit-slider-thumb {
+  border-color: #28a745;
 }
 
-@media (max-width: 768px) {
-  .calc-visual-preview-pane {
-    padding: 10px;
-    border-radius: 12px;
-  }
+.calc-range-bounds {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #6c757d;
+  font-weight: 500;
 }
 
-.calc-whatsapp-mockup {
+/* Formula Card */
+.calc-formula-card {
+  background-color: #faf8f5;
+  border: 1px solid #ede4d8;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.calc-formula-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.formula-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6c757d;
+}
+
+.formula-live-badge {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--gold-dark);
   background: #ffffff;
-  border-radius: var(--radius-cards);
-  border: 1px solid var(--color-stone-divider);
-  box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.06);
-  padding: var(--card-padding);
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(183, 134, 70, 0.2);
 }
 
-@media (max-width: 768px) {
-  .calc-whatsapp-mockup {
-    padding: 10px;
-    border-radius: 10px;
-  }
-}
-
-.wa-preview-header {
+.calc-formula-flow {
   display: flex;
   align-items: center;
-  gap: var(--element-gap);
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--color-stone-divider);
-  margin-bottom: var(--element-gap);
+  justify-content: space-between;
+  gap: 6px;
 }
 
-@media (max-width: 768px) {
-  .wa-preview-header {
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-  }
+.formula-node {
+  background: #ffffff;
+  border: 1px solid #e2d9cd;
+  border-radius: 8px;
+  padding: 6px 10px;
+  text-align: center;
+  flex: 1;
 }
 
-.wa-avatar {
-  width: 36px;
-  height: 36px;
+.formula-node-lbl {
+  display: block;
+  font-size: 10px;
+  color: #6c757d;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.formula-node-val {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-midnight-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.formula-node.highlight-margin .formula-node-val {
+  color: #1e7e34;
+}
+
+.formula-node.highlight-cust {
+  border-color: rgba(183, 134, 70, 0.4);
+  background-color: #faf5ed;
+}
+
+.formula-node.highlight-cust .formula-node-val {
+  color: var(--gold-dark);
+}
+
+.formula-node-op {
+  font-size: 15px;
+  font-weight: 700;
+  color: #a0988e;
+}
+
+/* Stat Grid */
+.calc-summary-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.calc-stat-box {
+  background-color: #ffffff;
+  border: 1px solid var(--color-stone-divider);
+  border-radius: 10px;
+  padding: 12px 14px;
+  text-align: center;
+}
+
+.calc-stat-box.highlight {
+  background-color: rgba(40, 167, 69, 0.06);
+  border-color: rgba(40, 167, 69, 0.3);
+}
+
+.calc-stat-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--color-slate-caption);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calc-stat-val {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-midnight-ink);
+  margin-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.calc-stat-box.highlight .calc-stat-val {
+  color: #1e7e34;
+}
+
+/* Visual Live Customer Preview Pane */
+.calc-visual-preview-pane {
+  background: linear-gradient(145deg, #faf7f2 0%, #f4ede2 100%);
+  border: 1px solid #e8decb;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calc-preview-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06);
+  padding: 16px;
+}
+
+.preview-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0eae1;
+}
+
+.store-avatar-box {
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background-color: var(--color-royal-signal);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -2387,120 +2528,147 @@ button {
   flex-shrink: 0;
 }
 
-@media (max-width: 768px) {
-  .wa-avatar {
-    width: 30px;
-    height: 30px;
-    font-size: 11.5px;
-  }
+.store-info-box {
+  flex-grow: 1;
 }
 
-.wa-reseller-brand-name {
+.store-name {
   font-size: 13.5px;
-  font-weight: var(--font-weight-semibold);
+  font-weight: 700;
   color: var(--color-midnight-ink);
 }
 
-@media (max-width: 768px) {
-  .wa-reseller-brand-name {
-    font-size: 12.5px;
-  }
-}
-
-.wa-badge {
+.store-sub {
   font-size: 11px;
-  color: var(--color-ash-helper);
+  color: #6c757d;
 }
 
-@media (max-width: 768px) {
-  .wa-badge {
-    font-size: 10px;
-  }
+.preview-privacy-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #1e7e34;
+  background-color: rgba(40, 167, 69, 0.1);
+  padding: 3px 8px;
+  border-radius: 100px;
+  border: 1px solid rgba(40, 167, 69, 0.2);
 }
 
-.wa-preview-body {
-  font-size: 12.5px;
-  color: var(--color-graphite-body);
-  line-height: 1.5;
+.preview-product-card {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  align-items: center;
 }
 
-.wa-price-tag-big {
-  font-size: 22px;
+.preview-product-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #fdfbf9 0%, #ebe5df 100%);
+  border: 1px solid #e8dfd3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.preview-product-info {
+  flex-grow: 1;
+}
+
+.preview-product-title {
+  font-size: 13.5px;
   font-weight: 700;
-  color: var(--color-royal-signal);
-  margin: 8px 0;
-  font-family: var(--font-roboto-mono);
+  color: var(--color-midnight-ink);
+  margin-bottom: 3px;
 }
 
-@media (max-width: 768px) {
-  .wa-price-tag-big {
-    font-size: 19px;
-    margin: 6px 0;
-  }
+.preview-product-specs {
+  font-size: 11px;
+  color: #6c757d;
+  line-height: 1.35;
+  margin-bottom: 6px;
 }
 
-.calc-summary-stat-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--element-gap);
-  margin-top: 12px;
+.preview-pricing-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-@media (max-width: 768px) {
-  .calc-summary-stat-grid {
-    gap: 8px;
-    margin-top: 10px;
-  }
+.preview-price-tag {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gold-dark);
+  font-variant-numeric: tabular-nums;
 }
 
-.calc-stat-box {
-  background-color: #ffffff;
-  border: 1px solid var(--color-stone-divider);
-  border-radius: var(--radius-lg);
-  padding: 10px;
+.preview-shipping-badge {
+  font-size: 10px;
+  font-weight: 600;
+  color: #495057;
+  background-color: #f1f3f5;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.preview-payout-box {
+  background-color: #faf8f5;
+  border-radius: 8px;
+  border: 1px dashed #decbb5;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.payout-item {
   text-align: center;
 }
 
-@media (max-width: 768px) {
-  .calc-stat-box {
-    padding: 8px;
-  }
-}
-
-.calc-stat-box.highlight {
-  background-color: rgba(22, 202, 46, 0.08);
-  border-color: rgba(22, 202, 46, 0.3);
-}
-
-.calc-stat-label {
+.payout-lbl {
+  display: block;
   font-size: 10.5px;
-  color: var(--color-slate-caption);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: #6c757d;
+  font-weight: 500;
 }
 
-@media (max-width: 768px) {
-  .calc-stat-label {
-    font-size: 9px;
-  }
-}
-
-.calc-stat-val {
-  font-size: 17px;
+.payout-val {
+  display: block;
+  font-size: 14px;
   font-weight: 700;
   color: var(--color-midnight-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.payout-val.text-profit {
+  color: #1e7e34;
+}
+
+.payout-divider {
+  width: 1px;
+  height: 24px;
+  background-color: #decbb5;
+}
+
+.preview-guarantee-note {
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: #6c757d;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  line-height: 1.45;
+}
+
+.preview-guarantee-note svg {
+  color: #1e7e34;
+  flex-shrink: 0;
   margin-top: 2px;
-  font-family: var(--font-roboto-mono);
-}
-
-@media (max-width: 768px) {
-  .calc-stat-val {
-    font-size: 14.5px;
-  }
-}
-
-.calc-stat-box.highlight .calc-stat-val {
-  color: var(--color-mint-win);
 }
 
 /* ==========================================================================

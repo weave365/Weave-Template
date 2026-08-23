@@ -191,6 +191,10 @@ function initMarginCalculator() {
   const displayCustomerPrice = document.getElementById('disp-cust-price');
   const displayProfitPct = document.getElementById('disp-profit-pct');
 
+  const formulaBase = document.getElementById('f-base');
+  const formulaMargin = document.getElementById('f-margin');
+  const formulaTotal = document.getElementById('f-total');
+
   const waCustPrice = document.getElementById('wa-preview-price');
   const waProfit = document.getElementById('wa-preview-profit');
 
@@ -204,16 +208,21 @@ function initMarginCalculator() {
     if (marginInput) marginInput.value = margin;
 
     const fmtBase = '₹' + base.toLocaleString('en-IN');
-    const fmtMargin = '₹' + margin.toLocaleString('en-IN');
+    const fmtMargin = '+₹' + margin.toLocaleString('en-IN');
+    const fmtMarginPure = '₹' + margin.toLocaleString('en-IN');
     const fmtCust = '₹' + customerPrice.toLocaleString('en-IN');
 
     if (displayBase) displayBase.textContent = fmtBase;
     if (displayMargin) displayMargin.textContent = fmtMargin;
     if (displayCustomerPrice) displayCustomerPrice.textContent = fmtCust;
-    if (displayProfitPct) displayProfitPct.textContent = profitPct + '%';
+    if (displayProfitPct) displayProfitPct.textContent = profitPct + '% ROI';
+
+    if (formulaBase) formulaBase.textContent = fmtBase;
+    if (formulaMargin) formulaMargin.textContent = fmtMarginPure;
+    if (formulaTotal) formulaTotal.textContent = fmtCust;
 
     if (waCustPrice) waCustPrice.textContent = fmtCust;
-    if (waProfit) waProfit.textContent = fmtMargin;
+    if (waProfit) waProfit.textContent = fmtMarginPure;
   }
 
   if (basePriceSlider && marginSlider) {

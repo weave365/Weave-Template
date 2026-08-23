@@ -1006,82 +1006,119 @@
       <div class="calculator-card-wrapper">
         <!-- Interactive Controls Pane -->
         <div class="calc-interactive-pane">
+          <!-- Slider 1: Base Price -->
           <div class="calc-control-group">
             <div class="calc-label-row">
-              <label for="calc-base-slider">Weave 365 Wholesale Price</label>
-              <span id="disp-base-price" class="mono-num text-accent" style="font-weight: 700;">₹1,500</span>
+              <span class="calc-input-label">Weave 365 Wholesale Price</span>
+              <span id="disp-base-price" class="calc-val-pill">₹1,500</span>
             </div>
-            <input type="range" id="calc-base-slider" class="calc-range-slider" min="800" max="8000" step="50" value="1500">
+            <input type="range" id="calc-base-slider" class="calc-range-slider" min="800" max="8000" step="50" value="1500" aria-label="Weave 365 Wholesale Price">
             <input type="hidden" id="calc-base-price" value="1500">
-            <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--color-ash-helper);">
-              <span>₹800 (Starter)</span>
-              <span>₹8,000 (Bridal Weave)</span>
+            <div class="calc-range-bounds">
+              <span>₹800 (Starter Sarees)</span>
+              <span>₹8,000 (Bridal Katan)</span>
             </div>
           </div>
 
+          <!-- Slider 2: Margin -->
           <div class="calc-control-group">
             <div class="calc-label-row">
-              <label for="calc-margin-slider">Your Added Margin (Markup)</label>
-              <span id="disp-margin-val" class="mono-num" style="color: var(--color-mint-win); font-weight: 700;">₹1,000</span>
+              <span class="calc-input-label">Your Added Margin (Profit)</span>
+              <span id="disp-margin-val" class="calc-val-pill calc-val-profit">+₹1,000</span>
             </div>
-            <input type="range" id="calc-margin-slider" class="calc-range-slider" min="200" max="4000" step="50" value="1000">
+            <input type="range" id="calc-margin-slider" class="calc-range-slider calc-slider-profit" min="200" max="4000" step="50" value="1000" aria-label="Your Added Margin">
             <input type="hidden" id="calc-margin-input" value="1000">
-            <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--color-ash-helper);">
+            <div class="calc-range-bounds">
               <span>₹200 (Quick Turnover)</span>
-              <span>₹4,000 (Premium Boutique)</span>
+              <span>₹4,000 (Boutique Markup)</span>
             </div>
           </div>
 
-          <!-- Formula Visual Box -->
-          <div style="background-color: var(--color-snow-canvas); border: 1px solid var(--color-stone-divider); border-radius: var(--radius-xl); padding: 16px;">
-            <div style="font-size: 12px; color: var(--color-slate-caption); margin-bottom: 8px;">The Reseller Pricing Formula:</div>
-            <div style="display: flex; align-items: center; justify-content: space-between; font-size: 13px; font-weight: 600;">
-              <span>Base Price</span>
-              <span>+</span>
-              <span>Your Margin</span>
-              <span>=</span>
-              <span class="text-accent">Customer Price</span>
+          <!-- Formula Visual Pipeline -->
+          <div class="calc-formula-card">
+            <div class="calc-formula-top">
+              <span class="formula-title">Pricing Math Breakdown</span>
+              <span class="formula-live-badge">Live Math</span>
+            </div>
+            <div class="calc-formula-flow">
+              <div class="formula-node">
+                <span class="formula-node-lbl">Wholesale Base</span>
+                <span class="formula-node-val" id="f-base">₹1,500</span>
+              </div>
+              <span class="formula-node-op">+</span>
+              <div class="formula-node highlight-margin">
+                <span class="formula-node-lbl">Your Profit</span>
+                <span class="formula-node-val" id="f-margin">₹1,000</span>
+              </div>
+              <span class="formula-node-op">=</span>
+              <div class="formula-node highlight-cust">
+                <span class="formula-node-lbl">Customer Price</span>
+                <span class="formula-node-val" id="f-total">₹2,500</span>
+              </div>
             </div>
           </div>
 
+          <!-- Stat Grid -->
           <div class="calc-summary-stat-grid">
             <div class="calc-stat-box">
-              <div class="calc-stat-label">Customer Price</div>
+              <div class="calc-stat-label">Customer View Price</div>
               <div class="calc-stat-val" id="disp-cust-price">₹2,500</div>
             </div>
             <div class="calc-stat-box highlight">
-              <div class="calc-stat-label">Profit Markup %</div>
-              <div class="calc-stat-val" id="disp-profit-pct">67%</div>
+              <div class="calc-stat-label">Profit Return Rate</div>
+              <div class="calc-stat-val" id="disp-profit-pct">67% ROI</div>
             </div>
           </div>
         </div>
 
-        <!-- Visual Live WhatsApp Preview Pane -->
+        <!-- Visual Live Customer Preview Pane -->
         <div class="calc-visual-preview-pane">
-          <div class="calc-whatsapp-mockup">
-            <div class="wa-preview-header">
-              <div class="wa-avatar">RS</div>
-              <div>
-                <div class="wa-reseller-brand-name">Your Boutique Catalogue</div>
-                <div class="wa-badge">White-Label Customer View</div>
+          <div class="calc-preview-card">
+            <!-- Header -->
+            <div class="preview-card-header">
+              <div class="store-avatar-box">YB</div>
+              <div class="store-info-box">
+                <div class="store-name">Your Boutique Catalogue</div>
+                <div class="store-sub">White-Label Customer View</div>
+              </div>
+              <span class="preview-privacy-pill">
+                <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                100% Private
+              </span>
+            </div>
+
+            <!-- Product Preview Box -->
+            <div class="preview-product-card">
+              <div class="preview-product-img">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div class="preview-product-info">
+                <h4 class="preview-product-title">Authentic Banarasi Katan Silk Saree</h4>
+                <p class="preview-product-specs">Handwoven Kadwa Jaal · Antique Zari Pallu · Blouse Included</p>
+                <div class="preview-pricing-row">
+                  <span class="preview-price-tag" id="wa-preview-price">₹2,500</span>
+                  <span class="preview-shipping-badge">Free All-India Shipping</span>
+                </div>
               </div>
             </div>
 
-            <div class="wa-preview-body">
-              <div style="font-weight: 600; color: var(--color-midnight-ink); margin-bottom: 4px;">Authentic Banarasi Katan Silk Saree</div>
-              <div style="font-size: 12px; color: var(--color-slate-caption);">Handwoven Kadwa Jaal with Antique Zari Pallu · Blouse Included</div>
-              
-              <div class="wa-price-tag-big" id="wa-preview-price">₹2,500</div>
-              
-              <div style="font-size: 11px; color: var(--color-ash-helper); border-top: 1px dashed var(--color-stone-divider); padding-top: 8px; margin-top: 8px; display: flex; align-items: center; justify-content: center; gap: 4px;">
-                <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
-                <span>Free Shipping across India · Secure Delivery</span>
+            <!-- Payout Highlight Row -->
+            <div class="preview-payout-box">
+              <div class="payout-item">
+                <span class="payout-lbl">Your Direct Net Profit</span>
+                <span class="payout-val text-profit" id="wa-preview-profit">₹1,000</span>
+              </div>
+              <div class="payout-divider"></div>
+              <div class="payout-item">
+                <span class="payout-lbl">Settlement Mode</span>
+                <span class="payout-val">Direct Bank Payout</span>
               </div>
             </div>
           </div>
 
-          <div style="margin-top: 16px; font-size: 12px; text-align: center; color: var(--color-slate-caption);">
-            Notice: <strong>Zero Weave 365 branding</strong> is displayed to your customer. You pocket <span id="wa-preview-profit" style="font-weight: 700; color: var(--color-mint-win);">₹1,000</span> directly.
+          <div class="preview-guarantee-note">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span><strong>Zero Weave 365 branding</strong> shown to buyers. Customer receives parcel under your brand.</span>
           </div>
         </div>
       </div>
