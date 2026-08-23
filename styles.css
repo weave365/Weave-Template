@@ -3889,15 +3889,15 @@ button {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2.3fr repeat(5, 1fr);
-  gap: 28px;
+  grid-template-columns: 2.8fr repeat(5, 1fr);
+  gap: 24px;
   margin-bottom: 36px;
 }
 
 @media (max-width: 1200px) {
   .footer-grid {
-    grid-template-columns: 1.9fr repeat(5, 1fr);
-    gap: 20px;
+    grid-template-columns: 2.5fr repeat(5, 1fr);
+    gap: 16px;
   }
 }
 
@@ -3908,7 +3908,7 @@ button {
   }
   .footer-brand-col {
     grid-column: span 3;
-    max-width: 480px;
+    max-width: 100%;
     padding-right: 0;
   }
 }
@@ -3937,7 +3937,7 @@ button {
 }
 
 .footer-brand-col {
-  padding-right: 48px;
+  padding-right: 32px;
 }
 
 .footer-logo-wrapper {
@@ -3960,11 +3960,18 @@ button {
 }
 
 .footer-brand-tagline {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: var(--font-weight-bold);
   color: var(--color-midnight-ink);
   margin-bottom: 8px;
   line-height: 1.45;
+  white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+  .footer-brand-tagline {
+    white-space: normal;
+  }
 }
 
 .footer-brand-desc {
