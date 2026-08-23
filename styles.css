@@ -3891,7 +3891,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 60px;
+  gap: 56px;
   margin-bottom: 36px;
   width: 100%;
 }
@@ -3904,7 +3904,7 @@ button {
 .footer-nav-grid {
   display: flex;
   justify-content: flex-end;
-  gap: 36px;
+  gap: 48px;
   flex: 0 1 auto;
   margin-left: auto;
 }
@@ -3914,12 +3914,21 @@ button {
   flex-direction: column;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .footer-layout {
-    gap: 40px;
+    gap: 44px;
   }
   .footer-nav-grid {
-    gap: 28px;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .footer-layout {
+    gap: 32px;
+  }
+  .footer-nav-grid {
+    gap: 24px;
   }
 }
 
