@@ -1120,11 +1120,6 @@ button {
   }
 }
 
-@media (max-width: 480px) {
-  .proof-text {
-    font-size: 13px;
-  }
-}
 
 /* ==========================================================================
    HERO RIGHT MEDIA: 4:3 ASPECT RATIO SHOWCASE CARD (Enhanced Luxury Visual)
@@ -4971,5 +4966,556 @@ kbd {
     display: none;
   }
 }
+
+/* ==========================================================================
+   MOBILE-ONLY TYPOGRAPHY & FONT SIZE OPTIMIZATION (STRICT SCOPE)
+   Applies ONLY to mobile viewports (<= 767px).
+   Desktop (1920px), Laptop (1440px), and Tablet (768px - 1024px) remain 100% UNCHANGED.
+   ========================================================================== */
+@media (max-width: 767px) {
+
+  /* --- 00. GLOBAL TYPOGRAPHY, BUTTONS & SECTION HEADERS --- */
+  .section-tag {
+    font-size: 13px;
+  }
+
+  .section-title {
+    font-size: 25px;
+  }
+
+  .section-title-lg {
+    font-size: 28px;
+  }
+
+  .section-desc {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .btn-sm {
+    font-size: 13px;
+  }
+
+  .btn {
+    font-size: 14.5px;
+  }
+
+  .btn-lg {
+    font-size: 16px;
+  }
+
+  /* --- 01. NAVIGATION & BRAND HEADER --- */
+  .brand-badge {
+    font-size: 11.5px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+  }
+
+  .dropdown-item {
+    font-size: 14.5px;
+  }
+
+  .dropdown-item .item-sub {
+    font-size: 12px;
+  }
+
+  /* --- 02. HERO SECTION --- */
+  .yc-badge-text {
+    font-size: 13px;
+  }
+
+  .yc-square-icon {
+    font-size: 11.5px;
+  }
+
+  .hero-headline-break {
+    display: none;
+  }
+
+  .hero-headline {
+    font-size: 26px;
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+
+  .hero-headline .text-accent:first-of-type {
+    white-space: nowrap;
+  }
+
+  .hero-subtext {
+    font-size: 15.5px;
+    line-height: 1.55;
+  }
+
+  .hero-bullet-item {
+    font-size: 14.5px;
+  }
+
+  .btn-relate-hero,
+  .btn-relate-outline {
+    font-size: 15.5px;
+  }
+
+  .proof-text {
+    font-size: 14.5px;
+  }
+
+  /* Hero Media Overlays */
+  .card-status-left,
+  .status-pill-green {
+    font-size: 11.5px;
+  }
+
+  .aspect-product-title {
+    font-size: 16.5px;
+  }
+
+  .aspect-product-sub {
+    font-size: 13.5px;
+  }
+
+  .m-lbl {
+    font-size: 10px;
+  }
+
+  .m-val {
+    font-size: 13.5px;
+  }
+
+  .m-divider {
+    font-size: 12px;
+  }
+
+  /* --- 03. CORE RESELLER BENEFITS --- */
+  .benefit-card-title {
+    font-size: 16.5px;
+  }
+
+  .benefit-card-desc {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* --- 04. HOW RESELLING WORKS --- */
+  .step-number {
+    font-size: 12px;
+  }
+
+  .step-title {
+    font-size: 16px;
+  }
+
+  .step-desc {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* --- 05. "WHAT SHOULD I SELL TODAY?" SHOWCASE --- */
+  .filter-tab-btn {
+    font-size: 13.5px;
+  }
+
+  .product-stock-tag,
+  .product-code-tag {
+    font-size: 11px;
+  }
+
+  .product-name {
+    font-size: 15px;
+  }
+
+  .product-fabric-detail {
+    font-size: 12.5px;
+  }
+
+  .price-row {
+    font-size: 13px;
+  }
+
+  .price-label {
+    font-size: 12.5px;
+  }
+
+  .price-val {
+    font-size: 13.5px;
+  }
+
+  .margin-highlight-row .price-val {
+    font-size: 14px;
+  }
+
+  .product-card-actions .btn {
+    font-size: 13.5px;
+  }
+
+  /* --- 06. BROWSE CATEGORIES SHOWCASE --- */
+  .category-pill-tag {
+    font-size: 11.5px;
+  }
+
+  .category-card-title {
+    font-size: 16.5px;
+  }
+
+  .category-card-desc {
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+
+  .category-card-link {
+    font-size: 13.5px;
+  }
+
+  /* --- 07. NEW ARRIVALS & BEST SELLERS --- */
+  .na-title {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .na-price-val {
+    font-size: 17px;
+  }
+
+  .na-price-unit {
+    font-size: 12.5px;
+  }
+
+  .na-colors-box {
+    font-size: 12.5px;
+  }
+
+  .btn-na-sell,
+  .btn-na-buy {
+    font-size: 13px;
+  }
+
+  .na-code-overlay {
+    font-size: 11.5px;
+  }
+
+  .na-img-placeholder > div:first-of-type {
+    font-size: 14px !important;
+  }
+
+  .na-img-placeholder > div:last-of-type {
+    font-size: 12px !important;
+  }
+
+  /* --- 08. PROFIT & MARGIN CALCULATOR --- */
+  .calc-input-label {
+    font-size: 14.5px;
+  }
+
+  .calc-val-pill {
+    font-size: 15.5px;
+  }
+
+  .calc-range-bounds {
+    font-size: 12px;
+  }
+
+  .formula-title {
+    font-size: 12px;
+  }
+
+  .formula-live-badge {
+    font-size: 11.5px;
+  }
+
+  .formula-node-lbl {
+    font-size: 11px;
+  }
+
+  .formula-node-val {
+    font-size: 15px;
+  }
+
+  .formula-node-op {
+    font-size: 15px;
+  }
+
+  .calc-stat-label {
+    font-size: 11.5px;
+  }
+
+  .calc-stat-val {
+    font-size: 19px;
+  }
+
+  .store-avatar-box {
+    font-size: 14px;
+  }
+
+  .store-name {
+    font-size: 15.5px;
+  }
+
+  .store-sub {
+    font-size: 13px;
+  }
+
+  .preview-privacy-pill {
+    font-size: 12.5px;
+  }
+
+  .preview-product-title {
+    font-size: 15px;
+  }
+
+  .preview-product-specs {
+    font-size: 12.5px;
+  }
+
+  .preview-price-tag {
+    font-size: 22px;
+  }
+
+  .preview-shipping-badge {
+    font-size: 12px;
+  }
+
+  .payout-lbl {
+    font-size: 12.5px;
+  }
+
+  .payout-val {
+    font-size: 16.5px;
+  }
+
+  .preview-guarantee-note {
+    font-size: 14px;
+  }
+
+  /* --- 09. COMPARISON MATRIX (DIFFERENCE) --- */
+  .comparison-table th {
+    font-size: 13.5px;
+  }
+
+  .comparison-table td {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  .comparison-table th.col-highlight {
+    font-size: 14px;
+  }
+
+  /* --- 10. EVERYTHING A RESELLER GETS (QUADRANT) --- */
+  .quadrant-pillar-title {
+    font-size: 12px;
+  }
+
+  .quadrant-title {
+    font-size: 18.5px;
+  }
+
+  .quadrant-list-item {
+    font-size: 14px;
+  }
+
+  /* --- 11. WHITE-LABEL SELLING & BOUTIQUE SIMULATOR --- */
+  .form-label {
+    font-size: 13.5px;
+  }
+
+  .form-input {
+    font-size: 14px;
+  }
+
+  .sim-preview-badge {
+    font-size: 12px;
+  }
+
+  #preview-brand-title {
+    font-size: 16px !important;
+  }
+
+  #preview-brand-city {
+    font-size: 13px !important;
+  }
+
+  #preview-final-price {
+    font-size: 24px !important;
+  }
+
+  /* --- 12. SELL ON CHANNELS --- */
+  .channel-title {
+    font-size: 16.5px;
+  }
+
+  .channel-desc {
+    font-size: 13.5px;
+  }
+
+  /* --- 13. DROPSHIPPING & TRUST --- */
+  .pipeline-node {
+    font-size: 12px;
+  }
+
+  .pipeline-step-name {
+    font-size: 14.5px;
+  }
+
+  .pipeline-step-desc {
+    font-size: 13px;
+  }
+
+  .trust-box-title {
+    font-size: 15.5px;
+  }
+
+  .trust-box-desc {
+    font-size: 13.5px;
+  }
+
+  /* --- 14. RESELLER EDUCATION & AGENTIC COMMERCE --- */
+  .edu-tag {
+    font-size: 12px;
+  }
+
+  .edu-title {
+    font-size: 16.5px;
+  }
+
+  .edu-desc {
+    font-size: 13.5px;
+  }
+
+  .agentic-pill {
+    font-size: 12px;
+  }
+
+  .agentic-title {
+    font-size: 22px;
+  }
+
+  .agentic-desc {
+    font-size: 14px;
+  }
+
+  .ai-chat-bubble {
+    font-size: 13.5px;
+  }
+
+  /* --- 15. BUILD YOUR BRAND / SCALE LADDER --- */
+  .ladder-tier {
+    font-size: 12px;
+  }
+
+  .ladder-title {
+    font-size: 17.5px;
+  }
+
+  .ladder-desc {
+    font-size: 13.5px;
+  }
+
+  .ladder-features {
+    font-size: 13.5px;
+  }
+
+  /* --- 16. FAQS & CONVERSION CTA --- */
+  .section-header-left .section-title {
+    font-size: 24px;
+  }
+
+  .section-header-left .section-desc {
+    font-size: 14.5px;
+  }
+
+  .faq-question {
+    font-size: 15px;
+  }
+
+  .faq-answer {
+    font-size: 14px;
+  }
+
+  .cta-feature-item {
+    font-size: 14.5px;
+  }
+
+  .final-cta-card .hero-ctas-row .btn {
+    font-size: 15px;
+  }
+
+  .cta-guarantee-note {
+    font-size: 14px;
+  }
+
+  /* --- 17. ECOSYSTEM DIRECTORY --- */
+  .ecosystem-header .section-title {
+    font-size: 24px;
+  }
+
+  .ecosystem-card-title {
+    font-size: 16.5px;
+  }
+
+  .ecosystem-links a {
+    font-size: 14.5px;
+  }
+
+  .ecosystem-links a::before {
+    font-size: 16px;
+  }
+
+  /* --- 18. GLOBAL FOOTER --- */
+  .site-footer {
+    font-size: 13.5px;
+  }
+
+  .footer-brand-tagline {
+    font-size: 15.5px;
+  }
+
+  .footer-brand-desc {
+    font-size: 14px;
+  }
+
+  .footer-contact-info {
+    font-size: 14px;
+  }
+
+  .footer-col-title {
+    font-size: 13.5px;
+  }
+
+  .footer-links a {
+    font-size: 13.5px;
+  }
+
+  .footer-bottom {
+    font-size: 12.5px;
+  }
+
+  /* --- 19. SEARCH MODAL & TOAST NOTIFICATION --- */
+  .search-section-label {
+    font-size: 12px;
+  }
+
+  .search-item-badge {
+    font-size: 12px;
+  }
+
+  .search-item-title {
+    font-size: 15px;
+  }
+
+  .search-item-desc {
+    font-size: 13px;
+  }
+
+  .search-footer-brand {
+    font-size: 12px;
+  }
+
+  .toast-notification {
+    font-size: 13.5px;
+  }
+}
+
 
 
