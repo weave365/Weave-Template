@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSearchModal();
   initActionToasts();
   initGsapAnimations();
+  initFloatingActions();
 });
 
 /* ==========================================================================
@@ -678,4 +679,42 @@ function initSearchModal() {
     }
   });
 }
+
+/* ==========================================================================
+   FLOATING ACTIONS (WHATSAPP & BACK TO TOP)
+   ========================================================================== */
+function initFloatingActions() {
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  if (!backToTopBtn) return;
+
+  let ticking = false;
+
+  const onScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        if (window.scrollY > 320) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Initial check in case page is reloaded halfway down
+  onScroll();
+
+  backToTopBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
 
