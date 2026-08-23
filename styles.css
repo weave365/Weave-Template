@@ -2015,6 +2015,231 @@ button {
 }
 
 /* ==========================================================================
+   04C. NEW ARRIVALS SPECIFIC CARD DESIGN (STRICTLY IN THIS SECTION)
+   ========================================================================== */
+.na-product-card {
+  background-color: #ffffff;
+  border: 1px solid var(--color-stone-divider);
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.na-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -8px rgba(0, 0, 0, 0.1);
+  border-color: rgba(183, 134, 70, 0.4);
+}
+
+.na-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  height: auto;
+  background-color: var(--color-fog-surface);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.na-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fdfbf9 0%, #ebe5df 100%);
+  color: var(--color-slate-caption);
+  text-align: center;
+  padding: 14px;
+}
+
+.na-weave-icon {
+  margin-bottom: 8px;
+  color: var(--color-royal-signal);
+}
+
+.na-bookmark-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-dark);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  padding: 0;
+  z-index: 2;
+}
+
+.na-bookmark-btn:hover {
+  background: #ffffff;
+  transform: scale(1.08);
+  color: var(--color-midnight-ink);
+}
+
+.na-code-overlay {
+  position: absolute;
+  bottom: 12px;
+  right: 8px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-roboto-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+.na-card-body {
+  padding: 14px 12px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.na-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.35;
+  margin-bottom: 10px;
+  min-height: 36px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.na-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 10px;
+  margin-bottom: 12px;
+  gap: 8px;
+}
+
+.na-price-box {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.na-price-val {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  font-family: var(--font-roboto-mono);
+}
+
+.na-price-unit {
+  font-size: 11.5px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.na-meta-divider {
+  width: 1px;
+  height: 16px;
+  background-color: #e5e7eb;
+}
+
+.na-colors-box {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.na-palette-icon {
+  color: #b78646;
+  flex-shrink: 0;
+}
+
+.na-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.btn-na-sell {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 7px 4px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border-radius: 8px;
+  background-color: #faf6ef;
+  border: 1px solid #e6d6c2;
+  color: #805d31;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-na-sell:hover {
+  background-color: #f3ede2;
+  border-color: #b78646;
+  color: #5c3f19;
+}
+
+.btn-na-buy {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 7px 4px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-na-buy:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+  color: #111827;
+}
+
+@media (max-width: 768px) {
+  .na-actions {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+/* ==========================================================================
    05. "YOUR MARGIN. YOUR PROFIT" INTERACTIVE CALCULATOR
    ========================================================================== */
 .calculator-card-wrapper {
