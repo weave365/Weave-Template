@@ -3746,14 +3746,16 @@ button {
   background: #ffffff;
   border: 1px solid var(--color-stone-divider);
   border-radius: var(--radius-containers);
-  padding: 24px;
+  padding: 24px 26px;
   box-shadow: var(--shadow-xl-2);
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: flex-start;
   text-align: left;
-  gap: 16px;
+  gap: 20px;
   position: relative;
   overflow: hidden;
 }
@@ -3771,9 +3773,8 @@ button {
 .cta-features-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 11px;
   width: 100%;
-  padding-bottom: 4px;
 }
 
 .cta-feature-item {
@@ -3790,10 +3791,19 @@ button {
   flex-shrink: 0;
 }
 
-.final-cta-card .hero-ctas-row {
-  width: 100%;
+.cta-card-bottom {
   display: flex;
   flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-stone-divider);
+}
+
+.final-cta-card .hero-ctas-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 10px;
   margin: 0;
 }
@@ -3802,6 +3812,9 @@ button {
   width: 100%;
   justify-content: center;
   text-align: center;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  white-space: nowrap;
 }
 
 .cta-guarantee-note {
@@ -3815,11 +3828,27 @@ button {
   gap: 6px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
+  .final-cta-card .hero-ctas-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .final-cta-card .hero-ctas-row {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}
+
+@media (max-width: 600px) {
   .final-cta-card {
     padding: 18px 16px;
     border-radius: 16px;
-    gap: 14px;
+    gap: 16px;
+  }
+  .final-cta-card .hero-ctas-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
   .section-header-left .section-title {
     font-size: 22px;
