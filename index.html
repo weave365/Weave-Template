@@ -1170,8 +1170,8 @@
         border-bottom: 2px solid #e2e8f0 !important;
       }
       #difference .comparison-table th:nth-child(1) { width: 28% !important; }
-      #difference .comparison-table th:nth-child(2) { width: 36% !important; color: #64748b !important; }
-      #difference .comparison-table th:nth-child(3) { width: 36% !important; }
+      #difference .comparison-table th:nth-child(2) { width: 36% !important; }
+      #difference .comparison-table th:nth-child(3) { width: 36% !important; color: #64748b !important; }
       #difference .comparison-table th.col-highlight {
         background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
         color: #ffffff !important;
@@ -1191,7 +1191,7 @@
         font-weight: 600 !important;
         color: #0f172a !important;
       }
-      #difference .comparison-table td:nth-child(2) {
+      #difference .comparison-table td:nth-child(3) {
         color: #64748b !important;
       }
       #difference .comparison-table td.col-highlight {
@@ -1239,107 +1239,24 @@
         vertical-align: middle !important;
       }
       @media (max-width: 768px) {
-        #difference .comparison-table-wrapper {
-          background-color: transparent !important;
-          border: none !important;
-          box-shadow: none !important;
-          overflow: visible !important;
-          margin-top: 24px !important;
-        }
-        #difference .comparison-table {
-          display: block !important;
-          min-width: 100% !important;
-          width: 100% !important;
-        }
-        #difference .comparison-table thead {
-          display: none !important;
-        }
-        #difference .comparison-table tbody {
-          display: flex !important;
-          flex-direction: column !important;
-          gap: 16px !important;
-          width: 100% !important;
-        }
-        #difference .comparison-table tr {
-          display: flex !important;
-          flex-direction: column !important;
-          background: #ffffff !important;
-          border-radius: 14px !important;
-          border: 1px solid #e2e8f0 !important;
-          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04) !important;
-          padding: 16px !important;
-          gap: 10px !important;
-          width: 100% !important;
-          box-sizing: border-box !important;
-        }
+        #difference .comparison-table th,
         #difference .comparison-table td {
-          display: block !important;
-          width: 100% !important;
-          padding: 0 !important;
-          border: none !important;
-          box-sizing: border-box !important;
+          padding: 12px 16px !important;
+          font-size: 12.5px !important;
         }
-        
-        /* 1st: Operating Capability */
-        #difference .comparison-table td:nth-child(1) {
-          order: 1 !important;
-          font-size: 15.5px !important;
-          font-weight: 700 !important;
-          color: #0f172a !important;
-          padding-bottom: 8px !important;
-          border-bottom: 1px solid #f1f5f9 !important;
-          margin-bottom: 2px !important;
-        }
-        
-        /* 2nd: Weave 365 Reseller OS */
-        #difference .comparison-table td:nth-child(3) {
-          order: 2 !important;
-          background-color: #faf7f2 !important;
-          border: 1px solid #ede4d5 !important;
-          border-radius: 10px !important;
-          padding: 12px 14px !important;
-          color: #0f172a !important;
-          font-size: 13.5px !important;
-          line-height: 1.45 !important;
-        }
-        #difference .comparison-table td:nth-child(3)::before {
-          content: 'Weave 365 Reseller OS';
-          font-size: 11px;
-          font-weight: 700;
-          color: #b78646;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-          display: block;
-          margin-bottom: 6px;
-        }
-        
-        /* 3rd: Generic Marketplace / Wholesaler */
-        #difference .comparison-table td:nth-child(2) {
-          order: 3 !important;
-          background-color: #f8fafc !important;
-          border: 1px solid #e2e8f0 !important;
-          border-radius: 10px !important;
-          padding: 12px 14px !important;
-          color: #475569 !important;
-          font-size: 13px !important;
-          line-height: 1.45 !important;
-        }
-        #difference .comparison-table td:nth-child(2)::before {
-          content: 'Generic Marketplace / Wholesaler';
-          font-size: 11px;
-          font-weight: 600;
-          color: #64748b;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-          display: block;
-          margin-bottom: 6px;
-        }
-        
         #difference .feature-check,
         #difference .feature-cross {
           width: 18px !important;
           height: 18px !important;
           margin-right: 6px !important;
+        }
+      }
+      @media (max-width: 767px) {
+        #difference .comparison-table th {
+          font-size: 13.5px !important;
+        }
+        #difference .comparison-table td {
+          font-size: 13.5px !important;
         }
       }
     </style>
@@ -1355,45 +1272,45 @@
           <thead>
             <tr>
               <th>Operating Capability</th>
-              <th>Generic Marketplace / Wholesaler</th>
               <th class="col-highlight">Weave 365 Reseller OS</th>
+              <th>Generic Marketplace / Wholesaler</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>Inventory Requirement</strong></td>
-              <td><span class="feature-cross"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> High upfront purchase / Bulk MOQ</td>
               <td class="col-highlight"><span class="feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> <strong>₹0 Inventory / Single-piece dispatch</strong></td>
+              <td><span class="feature-cross"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> High upfront purchase / Bulk MOQ</td>
             </tr>
             <tr>
               <td><strong>Customer Branding</strong></td>
-              <td><span class="feature-cross"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Wholesaler or marketplace branding</td>
               <td class="col-highlight"><span class="feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> <strong>100% White-Label with your business name</strong></td>
+              <td><span class="feature-cross"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Wholesaler or marketplace branding</td>
             </tr>
             <tr>
               <td><strong>Margin Control</strong></td>
-              <td><span class="feature-cross"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Fixed retail MRP or price war</td>
               <td class="col-highlight"><span class="feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> <strong>Custom markup defined by you</strong></td>
+              <td><span class="feature-cross"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Fixed retail MRP or price war</td>
             </tr>
             <tr>
               <td><strong>Direct Varanasi Sourcing</strong></td>
-              <td><span class="feature-cross"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Multi-middleman markups</td>
               <td class="col-highlight"><span class="feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> <strong>Direct from Varanasi weaving ecosystem</strong></td>
+              <td><span class="feature-cross"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Multi-middleman markups</td>
             </tr>
             <tr>
               <td><strong>White-Label Social Catalogues</strong></td>
+              <td class="col-highlight"><span class="feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> <strong>1-Click WhatsApp &amp; Instagram catalogues</strong></td>
               <td><span class="feature-cross"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Raw unbranded photos only</td>
-              <td class="col-highlight"><span class="feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> <strong>1-Click WhatsApp & Instagram catalogues</strong></td>
             </tr>
             <tr>
               <td><strong>Blind Quality Inspection</strong></td>
-              <td><span class="feature-cross"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Risk of defective pieces shipped</td>
               <td class="col-highlight"><span class="feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> <strong>3-Stage QC before parcel seal</strong></td>
+              <td><span class="feature-cross"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Risk of defective pieces shipped</td>
             </tr>
             <tr>
               <td><strong>Dedicated Reseller Support</strong></td>
-              <td><span class="feature-cross"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Slow support ticketing</td>
               <td class="col-highlight"><span class="feature-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> <strong>Direct WhatsApp reseller desk</strong></td>
+              <td><span class="feature-cross"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Slow support ticketing</td>
             </tr>
           </tbody>
         </table>
