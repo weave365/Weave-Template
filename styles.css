@@ -1582,10 +1582,15 @@ button {
   }
 }
 
-.filter-tab-btn.active, .filter-tab-btn:hover {
-  background-color: var(--color-midnight-ink);
+.filter-tab-btn.active {
+  background-color: #755825;
   color: #ffffff;
-  border-color: var(--color-midnight-ink);
+  border-color: #755825;
+}
+
+.filter-tab-btn:not(.active):hover {
+  border-color: #755825;
+  color: #755825;
 }
 
 .products-grid {
