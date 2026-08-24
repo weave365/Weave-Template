@@ -198,6 +198,8 @@ function initMarginCalculator() {
 
   const waCustPrice = document.getElementById('wa-preview-price');
   const waProfit = document.getElementById('wa-preview-profit');
+  const calcProdBase = document.getElementById('calc-prod-base-price');
+  const calcProdCust = document.getElementById('calc-prod-cust-price');
 
   function updateCalculations() {
     const base = parseFloat(basePriceSlider ? basePriceSlider.value : 1500) || 1500;
@@ -224,6 +226,8 @@ function initMarginCalculator() {
 
     if (waCustPrice) waCustPrice.textContent = fmtCust;
     if (waProfit) waProfit.textContent = fmtMarginPure;
+    if (calcProdBase) calcProdBase.textContent = fmtBase;
+    if (calcProdCust) calcProdCust.textContent = fmtCust;
   }
 
   if (basePriceSlider && marginSlider) {

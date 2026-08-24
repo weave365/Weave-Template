@@ -979,7 +979,40 @@
       </div>
 
       <div class="calculator-card-wrapper">
-        <!-- Interactive Controls Pane -->
+        <!-- 1st Column: Product Card Visual (as in homepage) -->
+        <div class="calc-product-col">
+          <div class="product-card calc-visual-card">
+            <div class="product-img-wrapper">
+              <div class="product-img-placeholder">
+                <div class="placeholder-weave-icon">
+                  <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                </div>
+                <span class="placeholder-weave-title" style="font-size: 11px; font-weight: 600; color: #805d31;">Authentic Varanasi Weave</span>
+              </div>
+              <span class="product-stock-tag">Ready Stock</span>
+              <span class="product-code-tag">KATAN-501</span>
+            </div>
+            <div class="product-body">
+              <h3 class="product-name">Pure Katan Silk Kadwa Jaal Saree</h3>
+              <p class="product-fabric-detail">Pure Katan Silk · Antique Gold Zari</p>
+              <div class="product-price-breakdown">
+                <div class="price-row base">
+                  <span class="lbl">Weave 365 Price:</span>
+                  <span class="val" id="calc-prod-base-price">₹1,500</span>
+                </div>
+                <div class="price-row cust">
+                  <span class="lbl">Suggested Selling:</span>
+                  <span class="val" id="calc-prod-cust-price">₹2,500</span>
+                </div>
+              </div>
+              <div class="product-card-actions">
+                <button class="btn btn-signal btn-sm" style="width: 100%;" onclick="showToast('Saree selected in Margin Simulator')">Live Sourcing Sample</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2nd Column: Weave 365 Wholesale Price (Interactive Controls Pane) -->
         <div class="calc-interactive-pane">
           <!-- Slider 1: Base Price -->
           <div class="calc-control-group">
@@ -1046,13 +1079,13 @@
           </div>
         </div>
 
-        <!-- Visual Live Customer Preview Card (Direct Right-Side Card) -->
+        <!-- 3rd Column: Your Catalogue (Live Customer Preview Card) -->
         <div class="calc-preview-card">
           <!-- Header -->
           <div class="preview-card-header">
-            <div class="store-avatar-box">YB</div>
+            <div class="store-avatar-box">YC</div>
             <div class="store-info-box">
-              <div class="store-name">Your Boutique Catalogue</div>
+              <div class="store-name">Your Catalogue</div>
               <div class="store-sub">White-Label Customer View</div>
             </div>
             <span class="preview-privacy-pill">
