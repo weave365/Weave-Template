@@ -7,7 +7,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initMarginCalculator();
   initCuratedProducts();
-  initWhiteLabelSimulator();
   initFaqAccordion();
   initMobileNav();
   initSearchModal();
@@ -179,7 +178,7 @@ function initGsapAnimations() {
 }
 
 /* ==========================================================================
-   01. INTERACTIVE MARGIN & PROFIT CALCULATOR
+   01. INTERACTIVE MARGIN & PROFIT CALCULATOR (4-COLUMN SUITE)
    ========================================================================== */
 function initMarginCalculator() {
   const basePriceInput = document.getElementById('calc-base-price');
@@ -200,6 +199,16 @@ function initMarginCalculator() {
   const waProfit = document.getElementById('wa-preview-profit');
   const calcProdBase = document.getElementById('calc-prod-base-price');
   const calcProdCust = document.getElementById('calc-prod-cust-price');
+
+  // Branding Inputs & Preview Elements
+  const brandNameInput = document.getElementById('calc-sim-brand-name');
+  const cityNameInput = document.getElementById('calc-sim-city-name');
+  const previewLogoChar = document.getElementById('calc-preview-logo');
+  const previewBrandName = document.getElementById('calc-preview-brand-name');
+  const previewBrandCity = document.getElementById('calc-preview-brand-city');
+
+  // Share Button
+  const btnShareCatalogue = document.getElementById('btnShareCatalogue');
 
   function updateCalculations() {
     const base = parseFloat(basePriceSlider ? basePriceSlider.value : 1500) || 1500;
@@ -230,6 +239,16 @@ function initMarginCalculator() {
     if (calcProdCust) calcProdCust.textContent = fmtCust;
   }
 
+  function updateBrandingPreview() {
+    const brandName = (brandNameInput && brandNameInput.value.trim()) || 'Aarohi Silk Studio';
+    const cityName = (cityNameInput && cityNameInput.value.trim()) || 'Bengaluru, Karnataka';
+    const initial = brandName.charAt(0).toUpperCase() || 'Y';
+
+    if (previewBrandName) previewBrandName.textContent = brandName;
+    if (previewBrandCity) previewBrandCity.textContent = cityName;
+    if (previewLogoChar) previewLogoChar.textContent = initial;
+  }
+
   if (basePriceSlider && marginSlider) {
     basePriceSlider.addEventListener('input', (e) => {
       if (basePriceInput) basePriceInput.value = e.target.value;
@@ -256,6 +275,55 @@ function initMarginCalculator() {
     }
 
     updateCalculations();
+  }
+
+  if (brandNameInput) {
+    brandNameInput.addEventListener('input', updateBrandingPreview);
+  }
+  if (cityNameInput) {
+    cityNameInput.addEventListener('input', updateBrandingPreview);
+  }
+  updateBrandingPreview();
+
+  // Share to Customer functionality
+  if (btnShareCatalogue) {
+    btnShareCatalogue.addEventListener('click', () => {
+      const brandName = (brandNameInput && brandNameInput.value.trim()) || 'Aarohi Silk Studio';
+      const base = parseFloat(basePriceSlider ? basePriceSlider.value : 1500) || 1500;
+      const margin = parseFloat(marginSlider ? marginSlider.value : 1000) || 1000;
+      const custPrice = '₹' + (base + margin).toLocaleString('en-IN');
+      const shareText = `✨ ${brandName} — Authentic Banarasi Katan Silk Saree\nSpecial Offer Price: ${custPrice}\nHandwoven Kadwa Jaal · Antique Zari Pallu · Blouse Included\nFree All-India Shipping | 100% Certified Varanasi Silk`;
+
+      if (navigator.share && /mobile|android|iphone|ipad/i.test(navigator.userAgent)) {
+        navigator.share({
+          title: `${brandName} Catalogue`,
+          text: shareText,
+          url: window.location.href
+        }).catch(() => {
+          copyToClipboardAndToast(shareText, brandName, custPrice);
+        });
+      } else {
+        copyToClipboardAndToast(shareText, brandName, custPrice);
+      }
+    });
+  }
+
+  function copyToClipboardAndToast(text, brand, price) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => {
+        if (typeof window.showToast === 'function') {
+          window.showToast(`Catalogue link for "${brand}" (${price}) copied to clipboard!`);
+        }
+      }).catch(() => {
+        if (typeof window.showToast === 'function') {
+          window.showToast(`Catalogue generated for "${brand}" at ${price}!`);
+        }
+      });
+    } else {
+      if (typeof window.showToast === 'function') {
+        window.showToast(`Catalogue generated for "${brand}" at ${price}!`);
+      }
+    }
   }
 }
 
@@ -403,38 +471,6 @@ function initCuratedProducts() {
   renderProducts();
 }
 
-/* ==========================================================================
-   03. WHITE-LABEL BRAND SIMULATOR
-   ========================================================================== */
-function initWhiteLabelSimulator() {
-  const brandNameInput = document.getElementById('sim-brand-name');
-  const cityInput = document.getElementById('sim-city-name');
-  const markupInput = document.getElementById('sim-markup');
-
-  const previewBrandDisplay = document.getElementById('preview-brand-title');
-  const previewLogoText = document.getElementById('preview-logo-char');
-  const previewCityDisplay = document.getElementById('preview-brand-city');
-  const previewPriceDisplay = document.getElementById('preview-final-price');
-
-  function updatePreview() {
-    const brand = (brandNameInput && brandNameInput.value.trim()) || 'Aarohi Silk Studio';
-    const city = (cityInput && cityInput.value.trim()) || 'Bengaluru';
-    const markup = parseFloat(markupInput ? markupInput.value : 1000) || 1000;
-    const base = 1850;
-    const finalPrice = base + markup;
-
-    if (previewBrandDisplay) previewBrandDisplay.textContent = brand;
-    if (previewLogoText) previewLogoText.textContent = brand.charAt(0).toUpperCase();
-    if (previewCityDisplay) previewCityDisplay.textContent = city;
-    if (previewPriceDisplay) previewPriceDisplay.textContent = '₹' + finalPrice.toLocaleString('en-IN');
-  }
-
-  if (brandNameInput) brandNameInput.addEventListener('input', updatePreview);
-  if (cityInput) cityInput.addEventListener('input', updatePreview);
-  if (markupInput) markupInput.addEventListener('input', updatePreview);
-
-  updatePreview();
-}
 
 /* ==========================================================================
    04. RESELLER FAQ ACCORDION

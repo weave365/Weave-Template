@@ -258,9 +258,14 @@ button {
 }
 
 @media (min-width: 1100px) {
-  #channels .section-title {
+  #channels .section-title,
+  #margin-calculator .section-title {
     white-space: nowrap;
   }
+}
+
+#margin-calculator .section-title {
+  font-size: clamp(22px, 2.2vw, 36px);
 }
 
 @media (max-width: 768px) {
@@ -2239,7 +2244,7 @@ button {
 }
 
 /* ==========================================================================
-   05. "YOUR MARGIN. YOUR PROFIT" INTERACTIVE CALCULATOR (REVAMPED)
+   05. "YOUR MARGIN. YOUR PROFIT" INTERACTIVE CALCULATOR (4-COLUMN SUITE)
    ========================================================================== */
 .calculator-card-wrapper {
   background-color: #ffffff;
@@ -2248,19 +2253,16 @@ button {
   padding: 24px;
   box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.06);
   display: grid;
-  grid-template-columns: 0.95fr 1.25fr 1.05fr;
-  gap: 24px;
+  grid-template-columns: 0.95fr 1.2fr 1fr 1.15fr;
+  gap: 20px;
   align-items: stretch;
   width: 100%;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .calculator-card-wrapper {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-  }
-  .calc-product-col {
-    grid-column: span 2;
   }
 }
 
@@ -2271,14 +2273,41 @@ button {
     padding: 16px;
     border-radius: 16px;
   }
-  .calc-product-col {
-    grid-column: auto;
-  }
 }
 
+/* Column Headers & Step Badges */
+.calc-column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ede4d5;
+}
+
+.calc-step-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--gold-dark);
+  background: rgba(183, 134, 70, 0.12);
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.calc-pane-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--color-midnight-ink);
+  margin: 0;
+}
+
+/* Column 1: Product Card (3:4 aspect ratio visual) */
 .calc-product-col {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .calc-visual-card {
@@ -2286,18 +2315,39 @@ button {
   border-radius: 14px;
   border: 1px solid #e8decb;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  overflow: hidden;
 }
 
-.calc-visual-card .product-img-wrapper {
-  aspect-ratio: 4 / 3;
-  min-height: 150px;
+.calc-visual-card .product-img-wrapper.calc-3-4-aspect {
+  aspect-ratio: 3 / 4;
+  min-height: 200px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  background: linear-gradient(145deg, #faf7f2 0%, #f4ede2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.calc-visual-card .product-body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+/* Column 2: Interactive Controls Pane */
 .calc-interactive-pane {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
   height: 100%;
   box-sizing: border-box;
 }
@@ -2305,7 +2355,7 @@ button {
 .calc-control-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .calc-label-row {
@@ -2315,17 +2365,17 @@ button {
 }
 
 .calc-input-label {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--color-midnight-ink);
 }
 
 .calc-val-pill {
-  font-size: 14.5px;
+  font-size: 13.5px;
   font-weight: 700;
   color: var(--gold-dark);
   background-color: rgba(183, 134, 70, 0.1);
-  padding: 3px 12px;
+  padding: 2px 10px;
   border-radius: 100px;
   border: 1px solid rgba(183, 134, 70, 0.25);
   font-variant-numeric: tabular-nums;
@@ -2349,8 +2399,8 @@ button {
 
 .calc-range-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: #ffffff;
   border: 4px solid var(--gold);
@@ -2371,7 +2421,7 @@ button {
 .calc-range-bounds {
   display: flex;
   justify-content: space-between;
-  font-size: 11px;
+  font-size: 10.5px;
   color: #6c757d;
   font-weight: 500;
 }
@@ -2380,19 +2430,19 @@ button {
 .calc-formula-card {
   background-color: #faf8f5;
   border: 1px solid #ede4d8;
-  border-radius: 12px;
-  padding: 12px 14px;
+  border-radius: 10px;
+  padding: 10px 12px;
 }
 
 .calc-formula-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .formula-title {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -2400,12 +2450,12 @@ button {
 }
 
 .formula-live-badge {
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 600;
   color: var(--gold-dark);
   background: #ffffff;
-  padding: 2px 8px;
-  border-radius: 6px;
+  padding: 2px 7px;
+  border-radius: 5px;
   border: 1px solid rgba(183, 134, 70, 0.2);
 }
 
@@ -2413,29 +2463,29 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 6px;
+  gap: 4px;
 }
 
 .formula-node {
   background: #ffffff;
   border: 1px solid #e2d9cd;
-  border-radius: 8px;
-  padding: 6px 8px;
+  border-radius: 6px;
+  padding: 5px 6px;
   text-align: center;
   flex: 1;
 }
 
 .formula-node-lbl {
   display: block;
-  font-size: 9.5px;
+  font-size: 9px;
   color: #6c757d;
   font-weight: 500;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .formula-node-val {
   display: block;
-  font-size: 13.5px;
+  font-size: 12.5px;
   font-weight: 700;
   color: var(--color-midnight-ink);
   font-variant-numeric: tabular-nums;
@@ -2455,7 +2505,7 @@ button {
 }
 
 .formula-node-op {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: #a0988e;
 }
@@ -2464,14 +2514,14 @@ button {
 .calc-summary-stat-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 10px;
 }
 
 .calc-stat-box {
   background-color: #ffffff;
   border: 1px solid var(--color-stone-divider);
-  border-radius: 10px;
-  padding: 10px 12px;
+  border-radius: 8px;
+  padding: 8px 10px;
   text-align: center;
 }
 
@@ -2481,7 +2531,7 @@ button {
 }
 
 .calc-stat-label {
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 600;
   color: var(--color-slate-caption);
   text-transform: uppercase;
@@ -2489,7 +2539,7 @@ button {
 }
 
 .calc-stat-val {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--color-midnight-ink);
   margin-top: 2px;
@@ -2500,16 +2550,111 @@ button {
   color: #1e7e34;
 }
 
-/* Visual Live Customer Preview Card (Direct Right-Side Card) */
+/* Column 3: Configure Your Branding Pane */
+.calc-branding-pane {
+  background: linear-gradient(145deg, #faf7f2 0%, #f7f2ea 100%);
+  border-radius: 14px;
+  border: 1px solid #e8decb;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.calc-branding-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.calc-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.calc-form-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-midnight-ink);
+}
+
+.calc-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.calc-input-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--gold-dark);
+  pointer-events: none;
+}
+
+.calc-text-input {
+  width: 100%;
+  padding: 8px 10px 8px 32px;
+  border: 1px solid #dcd3c4;
+  border-radius: 8px;
+  font-size: 12.5px;
+  color: var(--color-midnight-ink);
+  background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.calc-text-input:focus {
+  border-color: var(--gold);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(183, 134, 70, 0.15);
+}
+
+.calc-branding-trust-box {
+  background: #ffffff;
+  border: 1px solid #ede4d8;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.branding-trust-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 11px;
+  color: #475569;
+  line-height: 1.35;
+}
+
+.branding-trust-item strong {
+  color: var(--color-midnight-ink);
+}
+
+.branding-trust-item svg {
+  color: #16a34a;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Column 4: Your Catalogue (Live Customer Preview Card with Share CTA) */
 .calc-preview-card {
   background: linear-gradient(145deg, #faf7f2 0%, #f7f2ea 100%);
   border-radius: 14px;
   border: 1px solid #e8decb;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-  padding: 20px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 10px;
   height: 100%;
   box-sizing: border-box;
 }
@@ -2524,14 +2669,14 @@ button {
 .preview-card-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding-bottom: 12px;
+  gap: 10px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #ede4d5;
 }
 
 .store-avatar-box {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
   color: #ffffff;
@@ -2539,54 +2684,62 @@ button {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 13.5px;
+  font-size: 13px;
   flex-shrink: 0;
 }
 
 .store-info-box {
   flex-grow: 1;
+  min-width: 0;
 }
 
 .store-name {
-  font-size: 14.5px;
+  font-size: 13.5px;
   font-weight: 700;
   color: var(--color-midnight-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .store-sub {
-  font-size: 12px;
+  font-size: 11px;
   color: #64748b;
   margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .preview-privacy-pill {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-size: 11.5px;
+  gap: 4px;
+  font-size: 10.5px;
   font-weight: 600;
   color: #15803d;
   background-color: rgba(34, 197, 94, 0.12);
-  padding: 4px 10px;
+  padding: 3px 8px;
   border-radius: 100px;
   border: 1px solid rgba(34, 197, 94, 0.25);
+  white-space: nowrap;
 }
 
 .preview-product-card {
   display: flex;
-  gap: 14px;
-  padding: 14px 16px;
-  margin: 14px 0;
+  gap: 10px;
+  padding: 10px 12px;
+  margin: 6px 0;
   background: #ffffff;
   border: 1px solid #ebe2d4;
-  border-radius: 10px;
+  border-radius: 8px;
   align-items: center;
 }
 
 .preview-product-img {
-  width: 58px;
-  height: 58px;
-  border-radius: 8px;
+  width: 46px;
+  height: 46px;
+  border-radius: 6px;
   background: linear-gradient(135deg, #fdfbf9 0%, #ebe5df 100%);
   border: 1px solid #e8dfd3;
   display: flex;
@@ -2598,53 +2751,58 @@ button {
 
 .preview-product-info {
   flex-grow: 1;
+  min-width: 0;
 }
 
 .preview-product-title {
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 700;
   color: var(--color-midnight-ink);
-  margin-bottom: 3px;
+  margin-bottom: 2px;
+  line-height: 1.3;
 }
 
 .preview-product-specs {
-  font-size: 11.5px;
+  font-size: 10.5px;
   color: #64748b;
-  line-height: 1.4;
-  margin-bottom: 6px;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .preview-pricing-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .preview-price-tag {
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--gold-dark);
   font-variant-numeric: tabular-nums;
 }
 
 .preview-shipping-badge {
-  font-size: 10.5px;
+  font-size: 9.5px;
   font-weight: 600;
   color: #475569;
   background-color: #f1f5f9;
-  padding: 3px 8px;
+  padding: 2px 6px;
   border-radius: 4px;
 }
 
 .preview-payout-box {
   background-color: #ffffff;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px dashed #decbb5;
-  padding: 12px 16px;
+  padding: 8px 12px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 .payout-item {
@@ -2653,15 +2811,15 @@ button {
 
 .payout-lbl {
   display: block;
-  font-size: 11.5px;
+  font-size: 10.5px;
   color: #64748b;
   font-weight: 500;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .payout-val {
   display: block;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--color-midnight-ink);
   font-variant-numeric: tabular-nums;
@@ -2673,20 +2831,54 @@ button {
 
 .payout-divider {
   width: 1px;
-  height: 26px;
+  height: 22px;
   background-color: #ede4d5;
 }
 
+/* Button: Share to Your Customer */
+.preview-share-cta-wrap {
+  margin: 4px 0 6px 0;
+}
+
+.btn-share-catalogue {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #755825;
+  color: #ffffff;
+  border: 1px solid #755825;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(117, 88, 37, 0.2);
+}
+
+.btn-share-catalogue:hover {
+  background: #5c431b;
+  border-color: #5c431b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(117, 88, 37, 0.3);
+}
+
+.btn-share-catalogue:active {
+  transform: translateY(0);
+}
+
 .preview-guarantee-note {
-  font-size: 13.5px;
+  font-size: 11.5px;
   font-weight: 500;
   color: #334155;
   display: flex;
   align-items: center;
-  gap: 8px;
-  line-height: 1.45;
+  gap: 7px;
+  line-height: 1.35;
   margin-top: auto;
-  padding: 10px 14px;
+  padding: 8px 10px;
   background-color: #ffffff;
   border: 1px solid #e2d9cd;
   border-radius: 8px;
@@ -2699,8 +2891,8 @@ button {
 
 .preview-guarantee-note svg {
   color: #16a34a;
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
 }
 
@@ -2959,128 +3151,6 @@ button {
   margin-top: 3px;
 }
 
-/* ==========================================================================
-   08 & 09. WHITE-LABEL SELLING & BRAND SIMULATOR
-   ========================================================================== */
-.whitelabel-simulator-card {
-  background-color: #ffffff;
-  border-radius: var(--radius-containers);
-  border: 1px solid var(--color-stone-divider);
-  padding: 24px;
-  box-shadow: var(--shadow-xl-2);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  align-items: center;
-  width: 100%;
-}
-
-@media (max-width: 992px) {
-  .whitelabel-simulator-card {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 18px;
-    border-radius: 16px;
-  }
-}
-
-.brand-sim-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--element-gap-lg);
-  padding: 0;
-}
-
-@media (max-width: 768px) {
-  .brand-sim-form {
-    padding: 0;
-    gap: 10px;
-  }
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.form-label {
-  font-size: 12.5px;
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-midnight-ink);
-}
-
-.form-input {
-  background-color: var(--color-fog-surface);
-  border: 1px solid var(--color-stone-divider);
-  border-radius: var(--radius-inputs);
-  padding: 10px 14px;
-  font-size: 13.5px;
-  color: var(--color-midnight-ink);
-  transition: all 0.15s ease;
-  width: 100%;
-}
-
-@media (max-width: 768px) {
-  .form-input {
-    padding: 8px 12px;
-    font-size: 13px;
-  }
-}
-
-.form-input:focus {
-  outline: none;
-  border-color: var(--color-royal-signal);
-  box-shadow: 0 0 0 3px rgba(0, 153, 255, 0.2);
-  background-color: #ffffff;
-}
-
-.brand-sim-preview {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (max-width: 768px) {
-  .brand-sim-preview {
-    padding: 0;
-  }
-}
-
-.sim-preview-badge {
-  background: var(--color-fog-surface);
-  border: 1px solid var(--color-stone-divider);
-  padding: 3px 10px;
-  border-radius: 99px;
-  font-size: 11px;
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-slate-caption);
-  white-space: nowrap;
-}
-
-.customer-catalogue-mockup {
-  background: #ffffff;
-  border-radius: var(--radius-cards);
-  border: 1px solid var(--color-stone-divider);
-  padding: 18px 20px;
-  box-shadow: var(--shadow-sm);
-  width: 100%;
-  position: relative;
-}
-
-@media (max-width: 768px) {
-  .customer-catalogue-mockup {
-    padding: 14px 12px;
-    border-radius: 10px;
-  }
-}
 
 /* ==========================================================================
    10. SELL ON WHATSAPP / INSTAGRAM / FACEBOOK / WEBSITE
@@ -5387,30 +5457,6 @@ kbd {
     font-size: 14px;
   }
 
-  /* --- 11. WHITE-LABEL SELLING & BOUTIQUE SIMULATOR --- */
-  .form-label {
-    font-size: 13.5px;
-  }
-
-  .form-input {
-    font-size: 14px;
-  }
-
-  .sim-preview-badge {
-    font-size: 12px;
-  }
-
-  #preview-brand-title {
-    font-size: 16px !important;
-  }
-
-  #preview-brand-city {
-    font-size: 13px !important;
-  }
-
-  #preview-final-price {
-    font-size: 24px !important;
-  }
 
   /* --- 12. SELL ON CHANNELS --- */
   .channel-title {
